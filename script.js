@@ -17,8 +17,8 @@ const FALLBACK_IMAGE =
 
 const translations = {
   it: {
-    title: "Pirandello Rooms | Sito Ufficiale",
-    description: "Pirandello Rooms: camere curate, comfort moderno e un'accoglienza autentica nel cuore di Verona.",
+    title: "Pirandello Rooms Verona | Camere a Borgo Milano",
+    description: "Pirandello Rooms a Verona: camere triple, matrimoniali e doppie con bagno privato, aria condizionata e contatto diretto senza commissioni.",
     nav: {
       about: "Chi siamo",
       rooms: "Camere",
@@ -86,8 +86,8 @@ const translations = {
     }
   },
   en: {
-    title: "Pirandello Rooms | Official Website",
-    description: "Pirandello Rooms: carefully designed rooms, modern comfort and authentic hospitality in Verona.",
+    title: "Pirandello Rooms Verona | Rooms in Borgo Milano",
+    description: "Pirandello Rooms in Verona: triple, double and twin rooms with private bathroom, air conditioning and direct contact without commissions.",
     nav: {
       about: "About",
       rooms: "Rooms",
@@ -161,14 +161,14 @@ const roomTypes = [
     id: "tripla",
     folder: "tripla",
     files: [
-      "680634657 (1).jpg",
-      "680634799 (1).jpg",
-      "680634874 (1).jpg",
-      "680634895 (1).jpg",
-      "680634908 (1).jpg",
-      "680635078 (1).jpg",
-      "687358689 (1).jpg",
-      "687358691.jpg"
+      "camera-tripla-01.jpg",
+      "camera-tripla-02.jpg",
+      "camera-tripla-03.jpg",
+      "camera-tripla-04.jpg",
+      "camera-tripla-05.jpg",
+      "camera-tripla-06.jpg",
+      "camera-tripla-07.jpg",
+      "camera-tripla-08.jpg"
     ],
     content: {
       it: {
@@ -206,7 +206,7 @@ const roomTypes = [
   {
     id: "matrimoniale",
     folder: "matrimoniale",
-    files: ["680635039 (1).jpg", "681901484 (1).jpg", "681902454.jpg"],
+    files: ["camera-matrimoniale-01.jpg", "camera-matrimoniale-02.jpg", "camera-matrimoniale-03.jpg"],
     content: {
       it: {
         name: "Camera Matrimoniale",
@@ -244,12 +244,12 @@ const roomTypes = [
     id: "doppia",
     folder: "doppia",
     files: [
-      "687123132 (1).jpg",
-      "687123202 (1).jpg",
-      "687123208 (1).jpg",
-      "687123216 (1).jpg",
-      "687123222 (1).jpg",
-      "687123223.jpg"
+      "camera-doppia-letti-singoli-01.jpg",
+      "camera-doppia-letti-singoli-02.jpg",
+      "camera-doppia-letti-singoli-03.jpg",
+      "camera-doppia-letti-singoli-04.jpg",
+      "camera-doppia-letti-singoli-05.jpg",
+      "camera-doppia-letti-singoli-06.jpg"
     ],
     content: {
       it: {
@@ -287,6 +287,7 @@ const roomTypes = [
 ];
 
 let currentLanguage = localStorage.getItem("siteLanguage") || "it";
+let consentPreferences = JSON.parse(localStorage.getItem("cookieConsent") || "null");
 
 function resolvePath(object, path) {
   return path.split(".").reduce((value, key) => value?.[key], object);
@@ -405,6 +406,75 @@ function applyLanguage(language) {
   initializeRooms();
 }
 
+function updateGoogleConsent(preferences) {
+  if (typeof gtag !== "function") return;
+
+  gtag("consent", "update", {
+    ad_storage: preferences.marketing ? "granted" : "denied",
+    ad_user_data: preferences.marketing ? "granted" : "denied",
+    ad_personalization: preferences.marketing ? "granted" : "denied",
+    analytics_storage: preferences.analytics ? "granted" : "denied"
+  });
+}
+
+function loadGoogleMap() {
+  const iframe = document.getElementById("googleMap");
+  const consentPanel = document.getElementById("mapConsent");
+  if (!iframe) return;
+
+  if (!iframe.src && iframe.dataset.src) {
+    iframe.src = iframe.dataset.src;
+  }
+
+  consentPanel?.setAttribute("hidden", "");
+}
+
+function applyCookieConsent(preferences) {
+  consentPreferences = {
+    necessary: true,
+    preferences: true,
+    maps: Boolean(preferences.maps),
+    analytics: Boolean(preferences.analytics),
+    marketing: Boolean(preferences.marketing)
+  };
+
+  localStorage.setItem("cookieConsent", JSON.stringify(consentPreferences));
+  document.getElementById("cookieBanner")?.setAttribute("hidden", "");
+  updateGoogleConsent(consentPreferences);
+
+  if (consentPreferences.maps) {
+    loadGoogleMap();
+  }
+}
+
+function initializeCookieControls() {
+  const banner = document.getElementById("cookieBanner");
+  const mapButton = document.querySelector("[data-accept-maps]");
+
+  if (consentPreferences) {
+    updateGoogleConsent(consentPreferences);
+    if (consentPreferences.maps) loadGoogleMap();
+  } else {
+    banner?.removeAttribute("hidden");
+  }
+
+  document.querySelector("[data-cookie-accept]")?.addEventListener("click", () => {
+    applyCookieConsent({ maps: true, analytics: true, marketing: true });
+  });
+
+  document.querySelector("[data-cookie-reject]")?.addEventListener("click", () => {
+    applyCookieConsent({ maps: false, analytics: false, marketing: false });
+  });
+
+  mapButton?.addEventListener("click", () => {
+    applyCookieConsent({
+      maps: true,
+      analytics: consentPreferences?.analytics || false,
+      marketing: consentPreferences?.marketing || false
+    });
+  });
+}
+
 document.querySelectorAll("[data-lang-toggle]").forEach((button) => {
   button.addEventListener("click", () => {
     applyLanguage(button.dataset.langToggle);
@@ -412,3 +482,4 @@ document.querySelectorAll("[data-lang-toggle]").forEach((button) => {
 });
 
 applyLanguage(currentLanguage);
+initializeCookieControls();

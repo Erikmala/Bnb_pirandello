@@ -3,11 +3,29 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pirandello Rooms | Sito Ufficiale</title>
+    <title>Pirandello Rooms Verona | Camere a Borgo Milano</title>
     <meta
       name="description"
-      content="Pirandello Rooms: camere curate, comfort moderno e un'accoglienza autentica nel cuore di Verona."
+      content="Pirandello Rooms a Verona: camere triple, matrimoniali e doppie con bagno privato, aria condizionata e contatto diretto senza commissioni."
     />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#6b1a2e" />
+    <meta name="author" content="Pirandello Rooms" />
+    <meta
+      name="keywords"
+      content="Pirandello Rooms Verona, camere Verona Borgo Milano, affittacamere Verona, B&B Verona, camere vicino San Zeno"
+    />
+    <link rel="canonical" href="https://erikmala.github.io/Bnb_pirandello/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="it_IT" />
+    <meta property="og:title" content="Pirandello Rooms Verona" />
+    <meta
+      property="og:description"
+      content="Camere curate a Verona Borgo Milano: contatto diretto via WhatsApp, telefono o email."
+    />
+    <meta property="og:image" content="assets/camere/tripla/camera-tripla-01.jpg" />
+    <meta property="og:url" content="https://erikmala.github.io/Bnb_pirandello/" />
+    <meta name="twitter:card" content="summary_large_image" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -15,6 +33,35 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag("consent", "default", {
+        ad_storage: "denied",
+        ad_user_data: "denied",
+        ad_personalization: "denied",
+        analytics_storage: "denied"
+      });
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "LodgingBusiness",
+        "name": "Pirandello Rooms",
+        "description": "Camere triple, matrimoniali e doppie con letti singoli a Verona Borgo Milano.",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Via Luigi Pirandello n. 3",
+          "addressLocality": "Verona",
+          "postalCode": "37138",
+          "addressCountry": "IT"
+        },
+        "telephone": "+393349840378",
+        "email": "scacchetti.matteo99@gmail.com",
+        "url": "https://erikmala.github.io/Bnb_pirandello/",
+        "image": "https://erikmala.github.io/Bnb_pirandello/assets/camere/tripla/camera-tripla-01.jpg"
+      }
+    </script>
   </head>
   <body>
     <header class="hero" id="top">
@@ -109,11 +156,16 @@
           <div class="map-layout">
             <div class="map-frame">
               <iframe
+                id="googleMap"
                 title="Mappa Pirandello Rooms"
-                src="https://www.google.com/maps?q=Via+Luigi+Pirandello+3,+37138+Verona,+Italia&output=embed"
+                data-src="https://www.google.com/maps?q=Via+Luigi+Pirandello+3,+37138+Verona,+Italia&output=embed"
                 loading="lazy"
                 referrerpolicy="no-referrer-when-downgrade"
               ></iframe>
+              <div class="map-consent" id="mapConsent">
+                <p>La mappa usa Google Maps e può attivare servizi di terze parti.</p>
+                <button class="btn-secondary" type="button" data-accept-maps>Mostra mappa</button>
+              </div>
             </div>
             <aside class="address-card">
               <h3 data-i18n="map.addressTitle">Indirizzo</h3>
@@ -205,9 +257,28 @@
     <footer class="footer">
       <div class="container footer-content">
         <p>Pirandello Rooms</p>
-        <p data-i18n="footer.text">Sito in aggiornamento con contenuti e foto ufficiali.</p>
+        <p>
+          <span data-i18n="footer.text">Sito in aggiornamento con contenuti e foto ufficiali.</span>
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="cookie-policy.html">Cookie Policy</a>
+        </p>
       </div>
     </footer>
+
+    <div class="cookie-banner" id="cookieBanner" hidden>
+      <div>
+        <p class="cookie-title">Privacy e cookie</p>
+        <p>
+          Usiamo funzioni tecniche per il sito e, solo con il tuo consenso, servizi esterni
+          come Google Maps. Il sito è predisposto per Google Ads/Consent Mode.
+        </p>
+      </div>
+      <div class="cookie-actions">
+        <button class="btn-secondary" type="button" data-cookie-reject>Solo necessari</button>
+        <button class="btn-primary" type="button" data-cookie-accept>Accetta tutto</button>
+      </div>
+      <a href="cookie-policy.html">Leggi la Cookie Policy</a>
+    </div>
 
     <script src="script.js"></script>
   </body>

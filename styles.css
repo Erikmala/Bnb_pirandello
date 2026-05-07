@@ -544,11 +544,28 @@ img {
 }
 
 .map-frame {
+  position: relative;
   border-radius: var(--radius-md);
   overflow: hidden;
   border: 1px solid rgba(var(--panna-line-rgb), 0.72);
   min-height: 340px;
   background: var(--surface-soft);
+}
+
+.map-consent {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  gap: 0.8rem;
+  padding: 1.2rem;
+  text-align: center;
+  background: rgba(var(--cream-rgb), 0.94);
+  color: var(--muted);
+}
+
+.map-consent[hidden] {
+  display: none;
 }
 
 .map-frame iframe {
@@ -675,6 +692,102 @@ img {
   gap: 1rem;
   color: var(--muted);
   font-size: 0.9rem;
+}
+
+.footer-content a {
+  color: var(--bordeaux);
+  font-weight: 800;
+  margin-left: 0.8rem;
+  text-decoration: none;
+}
+
+.footer-content a:hover {
+  text-decoration: underline;
+}
+
+.cookie-banner {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 20;
+  width: min(540px, calc(100vw - 2rem));
+  border: 1px solid rgba(var(--panna-line-rgb), 0.9);
+  border-radius: var(--radius-md);
+  background: var(--panna-light);
+  box-shadow: 0 18px 42px rgba(var(--bordeaux-rgb), 0.2);
+  padding: 1rem;
+  display: grid;
+  gap: 0.85rem;
+}
+
+.cookie-banner[hidden] {
+  display: none;
+}
+
+.cookie-title {
+  margin: 0 0 0.25rem;
+  color: var(--bordeaux-dark);
+  font-weight: 900;
+}
+
+.cookie-banner p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.cookie-banner > a {
+  color: var(--bordeaux);
+  font-size: 0.9rem;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.cookie-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+}
+
+.legal-page {
+  padding: 2rem 0 3rem;
+}
+
+.brand-link {
+  display: inline-flex;
+  margin-bottom: 1rem;
+  color: var(--bordeaux);
+  font-family: "Prata", serif;
+  font-size: 1.4rem;
+  text-decoration: none;
+}
+
+.legal-shell {
+  line-height: 1.65;
+}
+
+.legal-shell h1,
+.legal-shell h2 {
+  color: var(--bordeaux-dark);
+}
+
+.legal-shell h1 {
+  margin: 0;
+  font-family: "Prata", serif;
+}
+
+.legal-shell h2 {
+  margin: 1.2rem 0 0;
+  font-size: 1.12rem;
+}
+
+.legal-shell p,
+.legal-shell li {
+  color: var(--muted);
+}
+
+.legal-shell a {
+  color: var(--bordeaux);
+  font-weight: 800;
 }
 
 /* ───────────────── RESPONSIVE ───────────────── */

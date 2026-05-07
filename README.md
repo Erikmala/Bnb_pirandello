@@ -10,6 +10,9 @@ Sito vetrina statico per il B&B Pirandello Rooms.
 - Immagini locali dedicate per camera doppia, matrimoniale e tripla
 - Descrizione, disponibilità e caratteristiche principali per ogni tipologia
 - Selettore lingua italiano/inglese nella navbar
+- Banner cookie con blocco preventivo di Google Maps
+- Privacy Policy, Cookie Policy, robots.txt e sitemap.xml
+- Metadati SEO, Open Graph e dati strutturati LodgingBusiness
 - Sezione contatti
 - Layout responsive per desktop, tablet e mobile
 
@@ -21,6 +24,10 @@ Sito vetrina statico per il B&B Pirandello Rooms.
 - assets/camere/doppia/
 - assets/camere/matrimoniale/
 - assets/camere/tripla/
+- privacy.html
+- cookie-policy.html
+- robots.txt
+- sitemap.xml
 
 ## Come aprire il sito
 
@@ -33,7 +40,7 @@ Quando saranno disponibili i dati ufficiali, potremo aggiornare:
 - testi e tono di voce
 - prezzi definitivi
 - caratteristiche definitive delle tipologie di camera
-- immagini ufficiali ad alta risoluzione
+- immagini ufficiali ad alta risoluzione e ottimizzate
 - contatti e link di prenotazione
 
 ## Gestione immagini locali delle camere
