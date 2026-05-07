@@ -271,6 +271,25 @@ img {
   box-shadow: 0 12px 24px rgba(var(--bordeaux-rgb), 0.18);
 }
 
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  border-radius: 999px;
+  padding: 0.8rem 1.15rem;
+  border: 1px solid rgba(var(--bordeaux-rgb), 0.24);
+  background: rgba(var(--bordeaux-rgb), 0.06);
+  color: var(--bordeaux-dark);
+  font-weight: 800;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.btn-secondary:hover {
+  transform: translateY(-2px);
+  background: rgba(var(--bordeaux-rgb), 0.1);
+}
+
 /* ───────────────── SEZIONI ───────────────── */
 .section {
   padding: 2.1rem 0;
@@ -631,6 +650,18 @@ img {
   color: var(--muted);
 }
 
+.contact-actions {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+  gap: 0.65rem;
+}
+
+.contact-actions .btn-primary,
+.contact-actions .btn-secondary {
+  white-space: nowrap;
+}
+
 /* ───────────────── FOOTER ───────────────── */
 .footer {
   padding: 1.8rem 0;
@@ -669,6 +700,11 @@ img {
   .contact-panel {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .contact-actions {
+    flex-wrap: wrap;
+    justify-content: flex-start;
   }
 }
 

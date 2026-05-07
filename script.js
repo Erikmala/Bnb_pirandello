@@ -65,19 +65,21 @@ const translations = {
     contacts: {
       eyebrow: "Contatti",
       title: "Prenota il tuo soggiorno da Pirandello Rooms",
-      text: "A breve inseriremo recapiti ufficiali, condizioni e dettagli per la prenotazione.",
-      cta: "Richiedi disponibilità"
+      text: "Per informazioni e disponibilità puoi contattarci direttamente via WhatsApp, telefono o email.",
+      whatsapp: "WhatsApp",
+      call: "Chiama",
+      email: "Email"
     },
     activities: {
       eyebrow: "Esperienze locali",
-      title: "Attività a meno di 15 minuti",
-      text: "Una selezione di luoghi e attrazioni facilmente raggiungibili dalla struttura.",
-      arena: "A circa 12 minuti in auto.",
-      bra: "A circa 11 minuti in auto.",
-      castelvecchio: "A circa 10 minuti in auto.",
-      sanzeno: "A circa 7 minuti in auto.",
-      ponte: "A circa 14 minuti in auto.",
-      mazzini: "A circa 13 minuti in auto."
+      title: "Attività a meno di 20 minuti a piedi",
+      text: "Una selezione di luoghi, locali e punti di interesse facilmente raggiungibili a piedi dalla struttura.",
+      canestrari: "A circa 18 minuti a piedi.",
+      sanmarco: "A circa 1 minuto a piedi.",
+      borgo: "A circa 5 minuti a piedi.",
+      rikimauri: "A circa 10 minuti a piedi.",
+      sanzeno: "A circa 15 minuti a piedi.",
+      bentegodi: "A circa 8 minuti a piedi."
     },
     footer: {
       text: "Sito in aggiornamento con contenuti e foto ufficiali."
@@ -132,19 +134,21 @@ const translations = {
     contacts: {
       eyebrow: "Contacts",
       title: "Book your stay at Pirandello Rooms",
-      text: "Official contacts, policies and booking details will be added soon.",
-      cta: "Request availability"
+      text: "For information and availability, contact us directly by WhatsApp, phone or email.",
+      whatsapp: "WhatsApp",
+      call: "Call",
+      email: "Email"
     },
     activities: {
       eyebrow: "Local experiences",
-      title: "Activities within 15 minutes",
-      text: "A selection of places and attractions that are easy to reach from the property.",
-      arena: "About 12 minutes by car.",
-      bra: "About 11 minutes by car.",
-      castelvecchio: "About 10 minutes by car.",
-      sanzeno: "About 7 minutes by car.",
-      ponte: "About 14 minutes by car.",
-      mazzini: "About 13 minutes by car."
+      title: "Activities within 20 minutes on foot",
+      text: "A selection of places, restaurants and points of interest that are easy to reach on foot from the property.",
+      canestrari: "About 18 minutes on foot.",
+      sanmarco: "About 1 minute on foot.",
+      borgo: "About 5 minutes on foot.",
+      rikimauri: "About 10 minutes on foot.",
+      sanzeno: "About 15 minutes on foot.",
+      bentegodi: "About 8 minutes on foot."
     },
     footer: {
       text: "Website being updated with official content and photos."
