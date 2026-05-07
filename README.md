@@ -19,6 +19,7 @@ Sito vetrina statico per il B&B Pirandello Rooms.
 - script.js
 - assets/camere/
 - assets/camere/camera-01 ... camera-06
+- assets/camere/galleria/
 
 ## Come aprire il sito
 
@@ -41,6 +42,7 @@ Le immagini vengono caricate direttamente dalle cartelle locali.
 Struttura:
 
 - assets/camere/
+  - galleria/
   - camera-01/
   - camera-02/
   - camera-03/
@@ -56,3 +58,6 @@ Nomi file consigliati per ogni cartella camera:
 - foto-4.jpg
 
 Se un file manca, il sito mostra automaticamente un'immagine segnaposto elegante.
+
+La cartella `assets/camere/galleria/` contiene le foto pubbliche della struttura usate
+nelle schede delle tipologie di camera.

@@ -1,5 +1,5 @@
 const ROOM_IMAGE_BASE = "assets/camere";
-const DEFAULT_PHOTO_SET = ["foto-1.jpg", "foto-2.jpg", "foto-3.jpg", "foto-4.jpg"];
+const GALLERY_IMAGE_BASE = `${ROOM_IMAGE_BASE}/galleria`;
 const FALLBACK_IMAGE =
   "data:image/svg+xml;charset=UTF-8," +
   encodeURIComponent(`
@@ -16,8 +16,11 @@ const FALLBACK_IMAGE =
   </svg>
 `);
 
-function roomPhotos(folder) {
-  return DEFAULT_PHOTO_SET.map((fileName) => `${ROOM_IMAGE_BASE}/${folder}/${fileName}`);
+function galleryPhotos(from, to) {
+  return Array.from({ length: to - from + 1 }, (_, index) => {
+    const photoNumber = String(from + index).padStart(2, "0");
+    return `${GALLERY_IMAGE_BASE}/foto-${photoNumber}.jpg`;
+  });
 }
 
 const rooms = [
@@ -26,21 +29,21 @@ const rooms = [
     price: "2 camere disponibili",
     description: "Soluzione ideale per tre ospiti, con un letto matrimoniale e un letto singolo.",
     features: ["3 ospiti", "1 letto matrimoniale", "1 letto singolo", "Bagno privato", "Wi-Fi veloce"],
-    photos: roomPhotos("camera-01")
+    photos: galleryPhotos(1, 7)
   },
   {
     name: "Camera Matrimoniale",
     price: "3 camere disponibili",
     description: "Camera pensata per due ospiti, con letto matrimoniale e ambienti curati.",
     features: ["2 ospiti", "1 letto matrimoniale", "Bagno privato", "Comfort essenziali", "Wi-Fi veloce"],
-    photos: roomPhotos("camera-03")
+    photos: galleryPhotos(8, 15)
   },
   {
     name: "Camera Doppia",
     price: "1 camera disponibile",
     description: "Camera per due ospiti con due letti singoli separati, pratica e confortevole.",
     features: ["2 ospiti", "2 letti singoli separati", "Bagno privato", "Comfort essenziali", "Wi-Fi veloce"],
-    photos: roomPhotos("camera-06")
+    photos: galleryPhotos(16, 21)
   }
 ];
 
