@@ -5,15 +5,12 @@ Sito vetrina statico per il B&B Pirandello Rooms.
 ## Contenuto incluso
 
 - Home con hero section professionale
-- Sezione chi siamo e punti di forza
+- Sezione "Chi siamo" con punti di forza della struttura
 - Sezione camere con 6 card geometriche e uniformi
-- Ogni camera include:
-- prezzo per notte
-- descrizione
-- caratteristiche principali
-- galleria foto scorrevole (slider)
+- Prezzo per notte, descrizione e caratteristiche principali per ogni camera
+- Galleria fotografica scorrevole per ogni camera
 - Sezione contatti
-- Layout responsive per desktop e mobile
+- Layout responsive per desktop, tablet e mobile
 
 ## File principali
 
@@ -25,21 +22,21 @@ Sito vetrina statico per il B&B Pirandello Rooms.
 
 ## Come aprire il sito
 
-Apri index.html nel browser.
+Apri `index.html` nel browser.
 
 ## Personalizzazione futura
 
-Quando avrai i dati ufficiali, aggiorneremo:
+Quando saranno disponibili i dati ufficiali, potremo aggiornare:
 
-- testi e tone of voice
+- testi e tono di voce
 - prezzi definitivi
 - caratteristiche reali delle camere
 - immagini ufficiali
-- contatti e link prenotazione
+- contatti e link di prenotazione
 
 ## Gestione immagini locali delle camere
 
-Le immagini sono caricate direttamente da cartelle locali.
+Le immagini vengono caricate direttamente dalle cartelle locali.
 
 Struttura:
 
@@ -51,7 +48,7 @@ Struttura:
   - camera-05/
   - camera-06/
 
-Nomi file consigliati in ogni cartella camera:
+Nomi file consigliati per ogni cartella camera:
 
 - foto-1.jpg
 - foto-2.jpg

@@ -12,7 +12,7 @@ const FALLBACK_IMAGE =
     </defs>
     <rect width="900" height="600" fill="url(#g)"/>
     <text x="50%" y="48%" text-anchor="middle" fill="#fff7ec" font-size="42" font-family="Georgia, serif">Pirandello Rooms</text>
-    <text x="50%" y="56%" text-anchor="middle" fill="#fff0de" font-size="24" font-family="Arial, sans-serif">Inserisci le foto in assets/camere/camera-0X/</text>
+    <text x="50%" y="56%" text-anchor="middle" fill="#fff0de" font-size="24" font-family="Arial, sans-serif">Inserisci le foto nella cartella della camera</text>
   </svg>
 `);
 
@@ -22,45 +22,45 @@ function roomPhotos(folder) {
 
 const rooms = [
   {
-    name: "Camera Pirandello 01",
+    name: "Camera Sole",
     price: "da EUR 89 / notte",
-    description: "Camera matrimoniale luminosa con palette neutra e bagno privato.",
-    features: ["2 ospiti", "18 m2", "Letto queen", "Bagno privato", "Wi-Fi veloce"],
+    description: "Camera matrimoniale luminosa, con tonalità neutre e bagno privato.",
+    features: ["2 ospiti", "18 m²", "Letto queen", "Bagno privato", "Wi-Fi veloce"],
     photos: roomPhotos("camera-01")
   },
   {
-    name: "Camera Pirandello 02",
+    name: "Camera Luna",
     price: "da EUR 99 / notte",
-    description: "Spazio moderno con area scrivania, ideale per soggiorni business.",
-    features: ["2 ospiti", "20 m2", "Letto king", "Smart TV", "Aria condizionata"],
+    description: "Spazio moderno con area scrivania, ideale per soggiorni di lavoro.",
+    features: ["2 ospiti", "20 m²", "Letto king", "Smart TV", "Aria condizionata"],
     photos: roomPhotos("camera-02")
   },
   {
-    name: "Camera Pirandello 03",
+    name: "Camera Marte",
     price: "da EUR 109 / notte",
-    description: "Atmosfera calda con vista città e finiture contemporanee.",
-    features: ["3 ospiti", "23 m2", "Letto queen + sofa", "Balcone", "Mini frigo"],
+    description: "Atmosfera calda, vista sulla città e finiture contemporanee.",
+    features: ["3 ospiti", "23 m²", "Letto queen + divano", "Balcone", "Mini frigo"],
     photos: roomPhotos("camera-03")
   },
   {
-    name: "Camera Pirandello 04",
+    name: "Camera Giove",
     price: "da EUR 119 / notte",
-    description: "Design pulito e armonioso con comfort premium e zona lounge.",
-    features: ["3 ospiti", "25 m2", "Letto king", "Doccia walk-in", "Macchina caffè"],
+    description: "Design pulito e armonioso, con comfort premium e zona lounge.",
+    features: ["3 ospiti", "25 m²", "Letto king", "Doccia walk-in", "Macchina caffè"],
     photos: roomPhotos("camera-04")
   },
   {
-    name: "Camera Pirandello 05",
+    name: "Camera Saturno",
     price: "da EUR 129 / notte",
-    description: "Camera family con spazi versatili e arredi dal taglio elegante.",
-    features: ["4 ospiti", "28 m2", "Letto queen + 2 singoli", "Bagno grande", "Cassaforte"],
+    description: "Camera familiare con spazi versatili e arredi eleganti.",
+    features: ["4 ospiti", "28 m²", "Letto queen + 2 singoli", "Bagno ampio", "Cassaforte"],
     photos: roomPhotos("camera-05")
   },
   {
-    name: "Camera Pirandello 06",
+    name: "Camera Venere",
     price: "da EUR 139 / notte",
-    description: "Suite con carattere deciso, ideale per un soggiorno esclusivo.",
-    features: ["4 ospiti", "31 m2", "Letto king + divano", "Zona relax", "Kit cortesia"],
+    description: "Suite dal carattere deciso, ideale per un soggiorno esclusivo.",
+    features: ["4 ospiti", "31 m²", "Letto king + divano", "Zona relax", "Kit di cortesia"],
     photos: roomPhotos("camera-06")
   }
 ];

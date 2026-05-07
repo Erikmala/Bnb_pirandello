@@ -1,15 +1,56 @@
 :root {
-  --bg: #fff9f0;
-  --surface: #fffdf8;
-  --surface-soft: #f8ebdc;
-  --text: #2b1c1a;
-  --muted: #684e49;
-  --accent: #7a1f3a;
-  --accent-2: #d6a24a;
-  --accent-3: #6c7b4a;
-  --radius-lg: 22px;
-  --radius-md: 14px;
-  --shadow: 0 14px 36px rgba(82, 44, 28, 0.12);
+  /* Palette principale: bordeaux profondo + bianco panna chiaro */
+
+  /* Bordeaux */
+  --bordeaux:        #6b1a2e;
+  --bordeaux-mid:    #832038;
+  --bordeaux-dark:   #541526;
+  --bordeaux-darker: #420f1e;
+  --bordeaux-light:  #9c2f46;
+  --bordeaux-rgb:    107, 26, 46;
+
+  /* Rosa bordeaux: accento morbido derivato dal colore principale */
+  --rose:            #a94a61;
+  --rose-soft:       #c98293;
+  --rose-rgb:        169, 74, 97;
+
+  /* Neutri panna */
+  --panna:           #fff8ed;
+  --panna-light:     #fffdf8;
+  --panna-soft:      #f8efe3;
+  --panna-line:      #ead8c7;
+  --panna-rgb:       255, 248, 237;
+  --panna-line-rgb:  234, 216, 199;
+
+  /* Alias di compatibilita */
+  --cream:           var(--panna);
+  --cream-soft:      var(--panna-light);
+  --cream-light:     var(--panna);
+  --cream-rgb:       var(--panna-rgb);
+  --sand:            var(--panna-line);
+  --sand-light:      var(--panna-light);
+  --sand-soft:       var(--panna-soft);
+  --sand-rgb:        var(--panna-line-rgb);
+  --terra:           var(--rose);
+  --terra-light:     var(--rose);
+  --terra-soft:      var(--rose-soft);
+  --terra-rgb:       var(--rose-rgb);
+
+  /* Oli semantici */
+  --bg:              var(--cream-soft);
+  --surface:         var(--panna-light);
+  --surface-soft:    var(--panna-soft);
+  --text:            #2a1510;
+  --muted:           #7a4f3a;
+  --accent:          var(--bordeaux);
+  --accent-2:        var(--rose);
+  --accent-3:        var(--panna-line);
+
+  /* Utility */
+  --radius-lg:       22px;
+  --radius-md:       14px;
+  --shadow:          0 14px 34px rgba(107, 26, 46, 0.11);
+  --shadow-warm:     0 8px 22px rgba(107, 26, 46, 0.09);
 }
 
 * {
@@ -25,19 +66,24 @@ body {
 body {
   font-family: "Manrope", sans-serif;
   color: var(--text);
-  background: radial-gradient(circle at 15% 8%, #fffdf7 0, #fff5e8 50%, #f7e7d4 100%);
+  background: var(--panna);
   line-height: 1.5;
   position: relative;
 }
 
+/* Texture di sfondo: punti sabbia sottili */
 body::before {
   content: "";
   position: fixed;
   inset: 0;
   pointer-events: none;
-  background-image: radial-gradient(circle at 1px 1px, rgba(102, 66, 44, 0.05) 1px, transparent 0);
-  background-size: 20px 20px;
-  opacity: 0.3;
+  background-image: radial-gradient(
+    circle at 1px 1px,
+    rgba(var(--bordeaux-rgb), 0.035) 1px,
+    transparent 0
+  );
+  background-size: 22px 22px;
+  opacity: 0.28;
 }
 
 img {
@@ -50,43 +96,54 @@ img {
   margin: 0 auto;
 }
 
+/* ───────────────── HERO ───────────────── */
 .hero {
   position: relative;
   overflow: hidden;
   padding-bottom: 3.5rem;
-  background: linear-gradient(135deg, #6f1834 0%, #8a2541 44%, #7a3a38 72%, #604734 100%);
-  color: #ffffff;
+  background: linear-gradient(
+    135deg,
+    var(--bordeaux-darker) 0%,
+    var(--bordeaux-dark) 38%,
+    var(--bordeaux) 72%,
+    var(--bordeaux-mid) 100%
+  );
+  color: var(--cream);
 }
 
+/* Alone terracotta in alto a destra */
 .hero::before {
   content: "";
   position: absolute;
   inset: 0;
   pointer-events: none;
   background:
-    linear-gradient(160deg, rgba(255, 255, 255, 0.06) 0%, transparent 40%),
-    linear-gradient(320deg, rgba(255, 255, 255, 0.04) 0%, transparent 50%);
+    radial-gradient(ellipse 55% 40% at 88% 12%, rgba(255, 248, 237, 0.12) 0%, transparent 68%),
+    linear-gradient(160deg, rgba(255,255,255,0.055) 0%, transparent 40%);
 }
 
+/* Vignetta bassa */
 .hero::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(16, 9, 8, 0) 0%, rgba(16, 9, 8, 0.15) 100%);
+  background: linear-gradient(180deg, rgba(20, 8, 6, 0) 0%, rgba(20, 8, 6, 0.18) 100%);
   pointer-events: none;
 }
 
+/* Griglia decorativa con tonalità sabbia */
 .hero-grid {
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(120deg, rgba(255, 240, 221, 0.08) 0px, transparent 1px),
-    linear-gradient(60deg, rgba(255, 240, 221, 0.06) 0px, transparent 1px);
-  background-size: 120px 120px;
-  opacity: 0.5;
+    linear-gradient(120deg, rgba(var(--panna-rgb), 0.12) 0px, transparent 1px),
+    linear-gradient(60deg,  rgba(var(--panna-rgb), 0.08) 0px, transparent 1px);
+  background-size: 110px 110px;
+  opacity: 0.55;
   pointer-events: none;
 }
 
+/* ───────────────── NAVBAR ───────────────── */
 .navbar {
   display: flex;
   align-items: center;
@@ -98,7 +155,7 @@ img {
 
 .brand {
   text-decoration: none;
-  color: #fff;
+  color: var(--cream);
   font-family: "Prata", serif;
   font-size: 1.5rem;
   letter-spacing: 0.03em;
@@ -113,21 +170,22 @@ img {
 }
 
 .nav-links a {
-  color: #fff;
+  color: var(--cream);
   text-decoration: none;
   font-weight: 600;
-  border: 1px solid rgba(255, 247, 229, 0.4);
+  border: 1px solid rgba(var(--sand-rgb), 0.45);
   border-radius: 999px;
   padding: 0.45rem 0.95rem;
-  background: rgba(98, 44, 29, 0.2);
+  background: rgba(var(--bordeaux-rgb), 0.15);
   transition: background-color 0.2s ease, border-color 0.2s ease;
 }
 
 .nav-links a:hover {
-  background: rgba(255, 232, 198, 0.2);
-  border-color: rgba(255, 232, 198, 0.55);
+  background: rgba(255, 248, 237, 0.16);
+  border-color: rgba(var(--sand-rgb), 0.65);
 }
 
+/* ───────────────── HERO CONTENT ───────────────── */
 .hero-content {
   padding: 4.4rem 0 2.6rem;
   max-width: 700px;
@@ -137,10 +195,10 @@ img {
 
 .eyebrow {
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.12em;
   font-size: 0.78rem;
   font-weight: 700;
-  color: #f2cf93;
+  color: var(--rose-soft);
   margin-bottom: 0.7rem;
 }
 
@@ -153,38 +211,41 @@ img {
 
 .hero p {
   font-size: 1.05rem;
-  color: rgba(255, 255, 255, 0.9);
+  color: rgba(253, 235, 210, 0.92);
   margin-bottom: 1.5rem;
 }
 
+/* ───────────────── BOTTONE ───────────────── */
 .btn-primary {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   text-decoration: none;
   border: none;
-  padding: 0.8rem 1.25rem;
+  padding: 0.8rem 1.4rem;
   border-radius: 999px;
-  background: #fff4e6;
-  color: #6f1834;
-  border: 1px solid rgba(255, 244, 230, 0.85);
+  background: var(--panna-light);
+  color: var(--bordeaux-dark);
+  border: 1px solid rgba(var(--sand-rgb), 0.7);
   font-weight: 700;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 12px 22px rgba(255, 244, 230, 0.18);
+  box-shadow: 0 12px 24px rgba(var(--bordeaux-rgb), 0.18);
 }
 
+/* ───────────────── SEZIONI ───────────────── */
 .section {
   padding: 2.1rem 0;
   position: relative;
+  background: var(--panna);
 }
 
 .section-shell {
   background: var(--surface);
-  border: 1px solid #e6cdb8;
+  border: 1px solid rgba(var(--panna-line-rgb), 0.72);
   border-radius: var(--radius-lg);
   padding: clamp(1.2rem, 3vw, 2rem);
   box-shadow: var(--shadow);
@@ -193,8 +254,8 @@ img {
 }
 
 .section-shell-rooms {
-  border-color: #e4cab4;
-  background: linear-gradient(180deg, #fffdf8 0%, #fff3e6 100%);
+  border-color: rgba(var(--panna-line-rgb), 0.72);
+  background: var(--surface);
 }
 
 .section-header {
@@ -207,7 +268,7 @@ img {
   margin: 0;
   font-size: clamp(1.5rem, 3vw, 2.3rem);
   font-family: "Prata", serif;
-  color: #5b1f35;
+  color: var(--bordeaux-dark);
 }
 
 .section-header p {
@@ -215,13 +276,8 @@ img {
   color: var(--muted);
 }
 
-.feature-grid {
-  display: grid;
-  gap: 1rem;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  align-items: stretch;
-}
-
+/* ───────────────── ABOUT GRID ───────────────── */
+.feature-grid,
 .about-grid {
   display: grid;
   gap: 1rem;
@@ -233,14 +289,15 @@ img {
   background: var(--surface);
   border-radius: var(--radius-md);
   padding: 1.2rem;
-  box-shadow: var(--shadow);
-  border: 1px solid #ead3c1;
+  box-shadow: var(--shadow-warm);
+  border: 1px solid rgba(var(--panna-line-rgb), 0.72);
   position: relative;
   min-height: 150px;
   display: grid;
   align-content: start;
 }
 
+/* Barra superiore degradé bordeaux → terracotta */
 .feature-card::before {
   content: "";
   position: absolute;
@@ -248,12 +305,14 @@ img {
   left: 0;
   right: 0;
   height: 5px;
-  background: linear-gradient(90deg, #d6a24a, #7a1f3a);
+  background: var(--bordeaux);
+  border-radius: var(--radius-md) var(--radius-md) 0 0;
 }
 
 .feature-card h3 {
   margin-top: 0;
   margin-bottom: 0.4rem;
+  color: var(--bordeaux-dark);
 }
 
 .feature-card p {
@@ -261,81 +320,9 @@ img {
   color: var(--muted);
 }
 
+/* ───────────────── ROOMS ───────────────── */
 .rooms-section {
-  background: linear-gradient(180deg, rgba(255, 249, 238, 0.7), rgba(247, 230, 210, 0.7));
-}
-
-.map-layout {
-  display: grid;
-  grid-template-columns: 1.5fr 1fr;
-  gap: 1rem;
-  align-items: stretch;
-}
-
-.map-frame {
-  border-radius: var(--radius-md);
-  overflow: hidden;
-  border: 1px solid #e9d2be;
-  min-height: 340px;
-  background: #f4e6d3;
-}
-
-.map-frame iframe {
-  border: 0;
-  width: 100%;
-  height: 100%;
-  min-height: 340px;
-}
-
-.address-card {
-  border: 1px solid #e9d2be;
-  border-radius: var(--radius-md);
-  background: var(--surface-soft);
-  padding: 1rem;
-  display: grid;
-  align-content: start;
-  gap: 0.8rem;
-}
-
-.address-card h3 {
-  margin: 0;
-  color: #5c2236;
-  font-size: 1.1rem;
-}
-
-.address-card p {
-  margin: 0;
-  color: var(--muted);
-}
-
-.activity-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1rem;
-  align-items: stretch;
-}
-
-.activity-card {
-  border: 1px solid #ead2bc;
-  border-radius: var(--radius-md);
-  background: var(--surface);
-  padding: 1rem;
-  min-height: 130px;
-  box-shadow: var(--shadow);
-  display: grid;
-  gap: 0.45rem;
-  align-content: start;
-}
-
-.activity-card h3 {
-  margin: 0;
-  color: #5c2236;
-  font-size: 1.02rem;
-}
-
-.activity-card p {
-  margin: 0;
-  color: var(--muted);
+  background: var(--panna);
 }
 
 .rooms-grid {
@@ -347,7 +334,7 @@ img {
 
 .room-card {
   background: var(--surface);
-  border: 1px solid #e9d2be;
+  border: 1px solid rgba(var(--panna-line-rgb), 0.72);
   border-radius: var(--radius-lg);
   overflow: hidden;
   box-shadow: var(--shadow);
@@ -358,6 +345,7 @@ img {
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
+/* Barra bordeaux → terracotta → sabbia */
 .room-card::before {
   content: "";
   position: absolute;
@@ -365,18 +353,19 @@ img {
   left: 0;
   right: 0;
   height: 6px;
-  background: linear-gradient(90deg, #9c2f4a, #d6a24a 52%, #6c7b4a);
+  background: var(--bordeaux);
   z-index: 2;
 }
 
 .room-card:hover {
   transform: translateY(-3px);
-  box-shadow: 0 18px 36px rgba(96, 53, 34, 0.16);
+  box-shadow: 0 18px 36px rgba(var(--bordeaux-rgb), 0.18);
 }
 
+/* Slider */
 .slider {
   position: relative;
-  background: #d9c6ae;
+  background: var(--surface-soft);
 }
 
 .slider-track {
@@ -412,10 +401,15 @@ img {
   border-radius: 999px;
   width: 2rem;
   height: 2rem;
-  background: rgba(67, 34, 22, 0.58);
+  background: rgba(var(--bordeaux-rgb), 0.65);
   color: #fff;
   cursor: pointer;
   font-size: 1rem;
+  transition: background 0.2s ease;
+}
+
+.slider-btn:hover {
+  background: rgba(var(--bordeaux-rgb), 0.86);
 }
 
 .slider-dots {
@@ -429,12 +423,15 @@ img {
   border-radius: 50%;
   border: 1px solid rgba(255, 255, 255, 0.75);
   background: rgba(255, 255, 255, 0.25);
+  cursor: pointer;
+  transition: background 0.2s ease;
 }
 
 .slider-dot.active {
   background: #fff;
 }
 
+/* Room body */
 .room-body {
   padding: 1.1rem 1.1rem 1.2rem;
   display: grid;
@@ -452,12 +449,12 @@ img {
 .room-head h3 {
   margin: 0;
   font-size: 1.1rem;
-  color: #5c2236;
+  color: var(--bordeaux-dark);
 }
 
 .price {
   font-weight: 800;
-  color: var(--accent);
+  color: var(--bordeaux);
   white-space: nowrap;
 }
 
@@ -476,17 +473,100 @@ img {
 }
 
 .meta-list li {
-  border: 1px solid #efdac8;
+  border: 1px solid rgba(var(--panna-line-rgb), 0.76);
   background: var(--surface-soft);
   padding: 0.42rem 0.55rem;
   border-radius: 10px;
   font-size: 0.88rem;
+  color: var(--text);
 }
 
+/* ───────────────── MAPPA ───────────────── */
+.map-layout {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 1rem;
+  align-items: stretch;
+}
+
+.map-frame {
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid rgba(var(--panna-line-rgb), 0.72);
+  min-height: 340px;
+  background: var(--surface-soft);
+}
+
+.map-frame iframe {
+  border: 0;
+  width: 100%;
+  height: 100%;
+  min-height: 340px;
+}
+
+.address-card {
+  border: 1px solid rgba(var(--panna-line-rgb), 0.72);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+  padding: 1rem;
+  display: grid;
+  align-content: start;
+  gap: 0.8rem;
+}
+
+.address-card h3 {
+  margin: 0;
+  color: var(--bordeaux-dark);
+  font-size: 1.1rem;
+}
+
+.address-card p {
+  margin: 0;
+  color: var(--muted);
+}
+
+/* ───────────────── ATTIVITÀ ───────────────── */
+.activity-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  align-items: stretch;
+}
+
+.activity-card {
+  border: 1px solid rgba(var(--panna-line-rgb), 0.72);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+  padding: 1rem;
+  min-height: 130px;
+  box-shadow: var(--shadow-warm);
+  display: grid;
+  gap: 0.45rem;
+  align-content: start;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.activity-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(var(--bordeaux-rgb), 0.12);
+}
+
+.activity-card h3 {
+  margin: 0;
+  color: var(--bordeaux-dark);
+  font-size: 1.02rem;
+}
+
+.activity-card p {
+  margin: 0;
+  color: var(--muted);
+}
+
+/* ───────────────── CONTATTI ───────────────── */
 .contact-panel {
   border-radius: var(--radius-lg);
-  border: 1px solid #e8cfbb;
-  background: #fffbf5;
+  border: 1px solid rgba(var(--panna-line-rgb), 0.72);
+  background: var(--surface);
   padding: clamp(1.1rem, 2.4vw, 1.7rem);
   display: flex;
   justify-content: space-between;
@@ -502,12 +582,13 @@ img {
   inset: 0;
   pointer-events: none;
   border-radius: var(--radius-lg);
-  border: 1px solid rgba(122, 31, 58, 0.24);
+  border: 1px solid rgba(var(--bordeaux-rgb), 0.2);
 }
 
 .contact-panel h2 {
   margin-top: 0;
   margin-bottom: 0.55rem;
+  color: var(--bordeaux-dark);
 }
 
 .contact-panel p {
@@ -515,20 +596,22 @@ img {
   color: var(--muted);
 }
 
+/* ───────────────── FOOTER ───────────────── */
 .footer {
   padding: 1.8rem 0;
-  border-top: 1px solid #e6cdb8;
-  background: #f7e8d5;
+  border-top: 1px solid rgba(var(--panna-line-rgb), 0.72);
+  background: var(--panna);
 }
 
 .footer-content {
   display: flex;
   justify-content: space-between;
   gap: 1rem;
-  color: #654f42;
+  color: var(--muted);
   font-size: 0.9rem;
 }
 
+/* ───────────────── RESPONSIVE ───────────────── */
 @media (max-width: 980px) {
   .rooms-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));

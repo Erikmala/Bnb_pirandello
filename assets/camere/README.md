@@ -1,6 +1,6 @@
 # Cartella immagini camere
 
-Questa cartella contiene tutte le foto delle camere di Pirandello Rooms.
+Questa cartella contiene le foto delle camere di Pirandello Rooms.
 
 ## Struttura
 
@@ -20,4 +20,4 @@ In ogni cartella camera usa questa convenzione:
 - foto-3.jpg
 - foto-4.jpg
 
-Puoi usare anche .jpeg o .png mantenendo lo stesso schema di nome.
+Puoi usare anche file `.jpeg` o `.png`, mantenendo lo stesso schema di nome.
