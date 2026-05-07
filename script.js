@@ -22,45 +22,24 @@ function roomPhotos(folder) {
 
 const rooms = [
   {
-    name: "Camera Sole",
-    price: "da EUR 89 / notte",
-    description: "Camera matrimoniale luminosa, con tonalità neutre e bagno privato.",
-    features: ["2 ospiti", "18 m²", "Letto queen", "Bagno privato", "Wi-Fi veloce"],
+    name: "Camera Tripla",
+    price: "2 camere disponibili",
+    description: "Soluzione ideale per tre ospiti, con un letto matrimoniale e un letto singolo.",
+    features: ["3 ospiti", "1 letto matrimoniale", "1 letto singolo", "Bagno privato", "Wi-Fi veloce"],
     photos: roomPhotos("camera-01")
   },
   {
-    name: "Camera Luna",
-    price: "da EUR 99 / notte",
-    description: "Spazio moderno con area scrivania, ideale per soggiorni di lavoro.",
-    features: ["2 ospiti", "20 m²", "Letto king", "Smart TV", "Aria condizionata"],
-    photos: roomPhotos("camera-02")
-  },
-  {
-    name: "Camera Marte",
-    price: "da EUR 109 / notte",
-    description: "Atmosfera calda, vista sulla città e finiture contemporanee.",
-    features: ["3 ospiti", "23 m²", "Letto queen + divano", "Balcone", "Mini frigo"],
+    name: "Camera Matrimoniale",
+    price: "3 camere disponibili",
+    description: "Camera pensata per due ospiti, con letto matrimoniale e ambienti curati.",
+    features: ["2 ospiti", "1 letto matrimoniale", "Bagno privato", "Comfort essenziali", "Wi-Fi veloce"],
     photos: roomPhotos("camera-03")
   },
   {
-    name: "Camera Giove",
-    price: "da EUR 119 / notte",
-    description: "Design pulito e armonioso, con comfort premium e zona lounge.",
-    features: ["3 ospiti", "25 m²", "Letto king", "Doccia walk-in", "Macchina caffè"],
-    photos: roomPhotos("camera-04")
-  },
-  {
-    name: "Camera Saturno",
-    price: "da EUR 129 / notte",
-    description: "Camera familiare con spazi versatili e arredi eleganti.",
-    features: ["4 ospiti", "28 m²", "Letto queen + 2 singoli", "Bagno ampio", "Cassaforte"],
-    photos: roomPhotos("camera-05")
-  },
-  {
-    name: "Camera Venere",
-    price: "da EUR 139 / notte",
-    description: "Suite dal carattere deciso, ideale per un soggiorno esclusivo.",
-    features: ["4 ospiti", "31 m²", "Letto king + divano", "Zona relax", "Kit di cortesia"],
+    name: "Camera Doppia",
+    price: "1 camera disponibile",
+    description: "Camera per due ospiti con due letti singoli separati, pratica e confortevole.",
+    features: ["2 ospiti", "2 letti singoli separati", "Bagno privato", "Comfort essenziali", "Wi-Fi veloce"],
     photos: roomPhotos("camera-06")
   }
 ];

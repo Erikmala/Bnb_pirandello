@@ -6,9 +6,9 @@ Sito vetrina statico per il B&B Pirandello Rooms.
 
 - Home con hero section professionale
 - Sezione "Chi siamo" con punti di forza della struttura
-- Sezione camere con 6 card geometriche e uniformi
-- Prezzo per notte, descrizione e caratteristiche principali per ogni camera
-- Galleria fotografica scorrevole per ogni camera
+- Sezione camere con 3 card per tipologia
+- Descrizione, disponibilità e caratteristiche principali per ogni tipologia di camera
+- Galleria fotografica scorrevole per ogni tipologia
 - Sezione contatti
 - Layout responsive per desktop, tablet e mobile
 
@@ -30,7 +30,7 @@ Quando saranno disponibili i dati ufficiali, potremo aggiornare:
 
 - testi e tono di voce
 - prezzi definitivi
-- caratteristiche reali delle camere
+- caratteristiche definitive delle tipologie di camera
 - immagini ufficiali
 - contatti e link di prenotazione
 
