@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://erikmala.github.io/Bnb_pirandello/sitemap.xml
