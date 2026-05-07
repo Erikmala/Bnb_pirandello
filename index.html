@@ -20,23 +20,29 @@
     <header class="hero" id="top">
       <nav class="navbar container">
         <a class="brand" href="#top">Pirandello Rooms</a>
-        <ul class="nav-links">
-          <li><a href="#chi-siamo">Chi siamo</a></li>
-          <li><a href="#camere">Camere</a></li>
-          <li><a href="#mappa">Mappa</a></li>
-          <li><a href="#contatti">Contatti</a></li>
-          <li><a href="#attivita">Attività</a></li>
-        </ul>
+        <div class="nav-actions">
+          <ul class="nav-links">
+            <li><a href="#chi-siamo" data-i18n="nav.about">Chi siamo</a></li>
+            <li><a href="#camere" data-i18n="nav.rooms">Camere</a></li>
+            <li><a href="#mappa" data-i18n="nav.map">Mappa</a></li>
+            <li><a href="#contatti" data-i18n="nav.contacts">Contatti</a></li>
+            <li><a href="#attivita" data-i18n="nav.activities">Attività</a></li>
+          </ul>
+          <div class="language-switcher" aria-label="Seleziona lingua">
+            <button class="lang-btn active" type="button" data-lang-toggle="it" aria-pressed="true">IT</button>
+            <button class="lang-btn" type="button" data-lang-toggle="en" aria-pressed="false">EN</button>
+          </div>
+        </div>
       </nav>
 
       <div class="hero-content container">
-        <p class="eyebrow">Ospitalità veronese</p>
-        <h1>Un soggiorno elegante, curato e autentico.</h1>
-        <p>
+        <p class="eyebrow" data-i18n="hero.eyebrow">Ospitalità veronese</p>
+        <h1 data-i18n="hero.title">Un soggiorno elegante, curato e autentico.</h1>
+        <p data-i18n="hero.text">
           Pirandello Rooms unisce comfort moderno, ambienti curati e una posizione comoda
           per vivere Verona con tranquillità.
         </p>
-        <a class="btn-primary" href="#camere">Scopri le camere</a>
+        <a class="btn-primary" href="#camere" data-i18n="hero.cta">Scopri le camere</a>
       </div>
       <div class="hero-grid" aria-hidden="true"></div>
     </header>
@@ -46,30 +52,30 @@
         <div class="section-shell">
           <div class="section-header">
             <p class="eyebrow">Pirandello Rooms</p>
-            <h2>Chi siamo</h2>
-            <p>
+            <h2 data-i18n="about.title">Chi siamo</h2>
+            <p data-i18n="about.text">
               Siamo un B&amp;B moderno e curato nel quartiere Borgo Milano, pensato per offrire
               un'accoglienza autentica e il calore tipico di Verona.
             </p>
           </div>
           <div class="about-grid">
             <article class="feature-card">
-              <h3>Posizione strategica</h3>
-              <p>
+              <h3 data-i18n="about.feature1.title">Posizione strategica</h3>
+              <p data-i18n="about.feature1.text">
                 Via Luigi Pirandello n. 3, Verona: una base ideale per raggiungere il centro storico,
                 i servizi e i principali punti di interesse.
               </p>
             </article>
             <article class="feature-card">
-              <h3>Accoglienza professionale</h3>
-              <p>
+              <h3 data-i18n="about.feature2.title">Accoglienza professionale</h3>
+              <p data-i18n="about.feature2.text">
                 Check-in semplice, ambienti ordinati e attenzione ai dettagli per una
                 permanenza confortevole.
               </p>
             </article>
             <article class="feature-card">
-              <h3>Comfort contemporaneo</h3>
-              <p>
+              <h3 data-i18n="about.feature3.title">Comfort contemporaneo</h3>
+              <p data-i18n="about.feature3.text">
                 Camere dal design contemporaneo, con servizi essenziali per viaggi di piacere
                 e soggiorni di lavoro.
               </p>
@@ -82,9 +88,9 @@
         <div class="container">
           <div class="section-shell section-shell-rooms">
             <div class="section-header">
-              <p class="eyebrow">Le nostre camere</p>
-              <h2>Tre tipologie, sei camere totali</h2>
-              <p>
+              <p class="eyebrow" data-i18n="rooms.eyebrow">Le nostre camere</p>
+              <h2 data-i18n="rooms.title">Tre tipologie, sei camere totali</h2>
+              <p data-i18n="rooms.text">
                 La struttura dispone di camere triple, matrimoniali e doppie con letti separati,
                 pensate per esigenze di soggiorno diverse.
               </p>
@@ -97,8 +103,8 @@
       <section class="section container" id="mappa">
         <div class="section-shell">
           <div class="section-header">
-            <p class="eyebrow">Dove siamo</p>
-            <h2>Mappa</h2>
+            <p class="eyebrow" data-i18n="map.eyebrow">Dove siamo</p>
+            <h2 data-i18n="map.title">Mappa</h2>
           </div>
           <div class="map-layout">
             <div class="map-frame">
@@ -110,13 +116,14 @@
               ></iframe>
             </div>
             <aside class="address-card">
-              <h3>Indirizzo</h3>
+              <h3 data-i18n="map.addressTitle">Indirizzo</h3>
               <p>Via Luigi Pirandello n. 3, Borgo Milano, 37138 Verona, Italia</p>
               <a
                 class="btn-primary"
                 href="https://www.google.com/maps/search/?api=1&query=Via+Luigi+Pirandello+3,+Borgo+Milano,+37138+Verona,+Italia"
                 target="_blank"
                 rel="noopener noreferrer"
+                data-i18n="map.cta"
                 >Apri le indicazioni</a
               >
             </aside>
@@ -128,13 +135,13 @@
         <div class="section-shell">
           <div class="contact-panel">
             <div>
-              <p class="eyebrow">Contatti</p>
-              <h2>Prenota il tuo soggiorno da Pirandello Rooms</h2>
-              <p>
+              <p class="eyebrow" data-i18n="contacts.eyebrow">Contatti</p>
+              <h2 data-i18n="contacts.title">Prenota il tuo soggiorno da Pirandello Rooms</h2>
+              <p data-i18n="contacts.text">
                 A breve inseriremo recapiti ufficiali, condizioni e dettagli per la prenotazione.
               </p>
             </div>
-            <a class="btn-primary" href="mailto:info@pirandellorooms.it">Richiedi disponibilità</a>
+            <a class="btn-primary" href="mailto:info@pirandellorooms.it" data-i18n="contacts.cta">Richiedi disponibilità</a>
           </div>
         </div>
       </section>
@@ -142,36 +149,36 @@
       <section class="section container" id="attivita">
         <div class="section-shell">
           <div class="section-header">
-            <p class="eyebrow">Esperienze locali</p>
-            <h2>Attività a meno di 15 minuti</h2>
-            <p>
+            <p class="eyebrow" data-i18n="activities.eyebrow">Esperienze locali</p>
+            <h2 data-i18n="activities.title">Attività a meno di 15 minuti</h2>
+            <p data-i18n="activities.text">
               Una selezione di luoghi e attrazioni facilmente raggiungibili dalla struttura.
             </p>
           </div>
           <div class="activity-grid">
             <article class="activity-card">
               <h3>Arena di Verona</h3>
-              <p>A circa 12 minuti in auto.</p>
+              <p data-i18n="activities.arena">A circa 12 minuti in auto.</p>
             </article>
             <article class="activity-card">
               <h3>Piazza Bra</h3>
-              <p>A circa 11 minuti in auto.</p>
+              <p data-i18n="activities.bra">A circa 11 minuti in auto.</p>
             </article>
             <article class="activity-card">
               <h3>Castelvecchio</h3>
-              <p>A circa 10 minuti in auto.</p>
+              <p data-i18n="activities.castelvecchio">A circa 10 minuti in auto.</p>
             </article>
             <article class="activity-card">
               <h3>Basilica di San Zeno</h3>
-              <p>A circa 7 minuti in auto.</p>
+              <p data-i18n="activities.sanzeno">A circa 7 minuti in auto.</p>
             </article>
             <article class="activity-card">
               <h3>Ponte Pietra</h3>
-              <p>A circa 14 minuti in auto.</p>
+              <p data-i18n="activities.ponte">A circa 14 minuti in auto.</p>
             </article>
             <article class="activity-card">
               <h3>Via Mazzini</h3>
-              <p>A circa 13 minuti in auto.</p>
+              <p data-i18n="activities.mazzini">A circa 13 minuti in auto.</p>
             </article>
           </div>
         </div>
@@ -181,7 +188,7 @@
     <footer class="footer">
       <div class="container footer-content">
         <p>Pirandello Rooms</p>
-        <p>Sito in aggiornamento con contenuti e foto ufficiali.</p>
+        <p data-i18n="footer.text">Sito in aggiornamento con contenuti e foto ufficiali.</p>
       </div>
     </footer>
 

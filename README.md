@@ -7,8 +7,9 @@ Sito vetrina statico per il B&B Pirandello Rooms.
 - Home con hero section professionale
 - Sezione "Chi siamo" con punti di forza della struttura
 - Sezione camere con 3 card per tipologia
-- Descrizione, disponibilità e caratteristiche principali per ogni tipologia di camera
-- Galleria fotografica scorrevole per ogni tipologia
+- Immagini locali dedicate per camera doppia, matrimoniale e tripla
+- Descrizione, disponibilità e caratteristiche principali per ogni tipologia
+- Selettore lingua italiano/inglese nella navbar
 - Sezione contatti
 - Layout responsive per desktop, tablet e mobile
 
@@ -17,13 +18,13 @@ Sito vetrina statico per il B&B Pirandello Rooms.
 - index.html
 - styles.css
 - script.js
-- assets/camere/
-- assets/camere/camera-01 ... camera-06
-- assets/camere/galleria/
+- assets/camere/doppia/
+- assets/camere/matrimoniale/
+- assets/camere/tripla/
 
 ## Come aprire il sito
 
-Apri `index.html` nel browser.
+Apri `index.html` nel browser oppure usa il server locale su `http://127.0.0.1:5500/`.
 
 ## Personalizzazione futura
 
@@ -32,32 +33,16 @@ Quando saranno disponibili i dati ufficiali, potremo aggiornare:
 - testi e tono di voce
 - prezzi definitivi
 - caratteristiche definitive delle tipologie di camera
-- immagini ufficiali
+- immagini ufficiali ad alta risoluzione
 - contatti e link di prenotazione
 
 ## Gestione immagini locali delle camere
 
-Le immagini vengono caricate direttamente dalle cartelle locali.
+Le immagini vengono caricate direttamente dalle cartelle locali dedicate alla tipologia:
 
-Struttura:
+- `assets/camere/doppia/`
+- `assets/camere/matrimoniale/`
+- `assets/camere/tripla/`
 
-- assets/camere/
-  - galleria/
-  - camera-01/
-  - camera-02/
-  - camera-03/
-  - camera-04/
-  - camera-05/
-  - camera-06/
-
-Nomi file consigliati per ogni cartella camera:
-
-- foto-1.jpg
-- foto-2.jpg
-- foto-3.jpg
-- foto-4.jpg
-
-Se un file manca, il sito mostra automaticamente un'immagine segnaposto elegante.
-
-La cartella `assets/camere/galleria/` contiene le foto pubbliche della struttura usate
-nelle schede delle tipologie di camera.
+Il sito usa i nomi file presenti in `script.js`. Se cambi o aggiungi foto, aggiorna anche
+l'elenco `files` della tipologia corrispondente.
