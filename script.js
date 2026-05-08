@@ -24,6 +24,7 @@ const translations = {
       rooms: "Camere",
       map: "Mappa",
       contacts: "Contatti",
+      info: "Info utili",
       activities: "Attività"
     },
     hero: {
@@ -54,13 +55,16 @@ const translations = {
       text: "La struttura dispone di camere triple, matrimoniali e doppie con letti separati, pensate per esigenze di soggiorno diverse.",
       prevPhoto: "Foto precedente",
       nextPhoto: "Foto successiva",
-      photoAlt: "foto"
+      photoAlt: "foto",
+      goToPhoto: "Vai alla foto"
     },
     map: {
       eyebrow: "Dove siamo",
       title: "Mappa",
       addressTitle: "Indirizzo",
-      cta: "Apri le indicazioni"
+      cta: "Apri le indicazioni",
+      consentText: "La mappa usa Google Maps e può attivare servizi di terze parti.",
+      showButton: "Mostra mappa"
     },
     contacts: {
       eyebrow: "Contatti",
@@ -69,6 +73,27 @@ const translations = {
       whatsapp: "WhatsApp",
       call: "Chiama",
       email: "Email"
+    },
+    info: {
+      eyebrow: "Prima del soggiorno",
+      title: "Informazioni utili",
+      text: "Orari e condizioni provvisorie da confermare al momento della prenotazione diretta.",
+      checkin: {
+        title: "Check-in",
+        text: "Dalle 15:00 alle 20:00, su appuntamento."
+      },
+      checkout: {
+        title: "Check-out",
+        text: "Entro le 10:00 del giorno di partenza."
+      },
+      tax: {
+        title: "Tassa di soggiorno",
+        text: "Applicata secondo il regolamento del Comune di Verona."
+      },
+      payment: {
+        title: "Pagamenti",
+        text: "Modalità e condizioni da confermare in fase di prenotazione."
+      }
     },
     activities: {
       eyebrow: "Esperienze locali",
@@ -82,7 +107,15 @@ const translations = {
       bentegodi: "A circa 8 minuti a piedi."
     },
     footer: {
-      text: "Sito in aggiornamento con contenuti e foto ufficiali."
+      text: "Dati societari provvisori in attesa di conferma ufficiale."
+    },
+    cookie: {
+      title: "Privacy e cookie",
+      text: "Usiamo funzioni tecniche per il sito e, solo con il tuo consenso, servizi esterni come Google Maps.",
+      reject: "Solo necessari",
+      accept: "Accetta Google Maps",
+      policy: "Leggi la Cookie Policy",
+      preferences: "Preferenze cookie"
     }
   },
   en: {
@@ -93,6 +126,7 @@ const translations = {
       rooms: "Rooms",
       map: "Map",
       contacts: "Contacts",
+      info: "Useful info",
       activities: "Activities"
     },
     hero: {
@@ -123,13 +157,16 @@ const translations = {
       text: "The property offers triple, double and twin rooms, designed for different travel needs.",
       prevPhoto: "Previous photo",
       nextPhoto: "Next photo",
-      photoAlt: "photo"
+      photoAlt: "photo",
+      goToPhoto: "Go to photo"
     },
     map: {
       eyebrow: "Where we are",
       title: "Map",
       addressTitle: "Address",
-      cta: "Open directions"
+      cta: "Open directions",
+      consentText: "The map uses Google Maps and may activate third-party services.",
+      showButton: "Show map"
     },
     contacts: {
       eyebrow: "Contacts",
@@ -138,6 +175,27 @@ const translations = {
       whatsapp: "WhatsApp",
       call: "Call",
       email: "Email"
+    },
+    info: {
+      eyebrow: "Before your stay",
+      title: "Useful information",
+      text: "Provisional times and conditions to be confirmed when booking directly.",
+      checkin: {
+        title: "Check-in",
+        text: "From 3:00 pm to 8:00 pm, by appointment."
+      },
+      checkout: {
+        title: "Check-out",
+        text: "By 10:00 am on the day of departure."
+      },
+      tax: {
+        title: "City tax",
+        text: "Applied according to the rules of the Municipality of Verona."
+      },
+      payment: {
+        title: "Payments",
+        text: "Methods and conditions to be confirmed when booking."
+      }
     },
     activities: {
       eyebrow: "Local experiences",
@@ -151,7 +209,15 @@ const translations = {
       bentegodi: "About 8 minutes on foot."
     },
     footer: {
-      text: "Website being updated with official content and photos."
+      text: "Temporary business details pending official confirmation."
+    },
+    cookie: {
+      title: "Privacy and cookies",
+      text: "We use technical features for the website and, only with your consent, external services such as Google Maps.",
+      reject: "Necessary only",
+      accept: "Accept Google Maps",
+      policy: "Read the Cookie Policy",
+      preferences: "Cookie preferences"
     }
   }
 };
@@ -286,8 +352,16 @@ const roomTypes = [
   }
 ];
 
-let currentLanguage = localStorage.getItem("siteLanguage") || "it";
-let consentPreferences = JSON.parse(localStorage.getItem("cookieConsent") || "null");
+const requestedLanguage = new URLSearchParams(window.location.search).get("lang");
+const savedLanguage = localStorage.getItem("siteLanguage");
+let currentLanguage = translations[requestedLanguage] ? requestedLanguage : translations[savedLanguage] ? savedLanguage : "it";
+let consentPreferences = null;
+
+try {
+  consentPreferences = JSON.parse(localStorage.getItem("cookieConsent") || "null");
+} catch {
+  localStorage.removeItem("cookieConsent");
+}
 
 function resolvePath(object, path) {
   return path.split(".").reduce((value, key) => value?.[key], object);
@@ -308,7 +382,10 @@ function createRoomCard(room, index) {
     )
     .join("");
   const dotItems = room.files
-    .map((_, photoIndex) => `<span class="slider-dot ${photoIndex === 0 ? "active" : ""}" data-dot="${photoIndex}"></span>`)
+    .map(
+      (_, photoIndex) =>
+        `<button class="slider-dot ${photoIndex === 0 ? "active" : ""}" type="button" data-dot="${photoIndex}" aria-label="${copy.rooms.goToPhoto} ${photoIndex + 1}" aria-current="${photoIndex === 0 ? "true" : "false"}"></button>`
+    )
     .join("");
 
   return `
@@ -364,6 +441,7 @@ function initializeRooms() {
 
       dots.forEach((dot, dotIndex) => {
         dot.classList.toggle("active", dotIndex === currentIndex);
+        dot.setAttribute("aria-current", String(dotIndex === currentIndex));
       });
     }
 
@@ -429,6 +507,25 @@ function loadGoogleMap() {
   consentPanel?.setAttribute("hidden", "");
 }
 
+function unloadGoogleMap() {
+  const iframe = document.getElementById("googleMap");
+  const consentPanel = document.getElementById("mapConsent");
+
+  if (iframe) {
+    iframe.removeAttribute("src");
+  }
+
+  consentPanel?.removeAttribute("hidden");
+}
+
+function setCookieBannerOpen(isOpen) {
+  const banner = document.getElementById("cookieBanner");
+  if (!banner) return;
+
+  banner.toggleAttribute("hidden", !isOpen);
+  document.body.classList.toggle("cookie-banner-open", isOpen);
+}
+
 function applyCookieConsent(preferences) {
   consentPreferences = {
     necessary: true,
@@ -439,27 +536,38 @@ function applyCookieConsent(preferences) {
   };
 
   localStorage.setItem("cookieConsent", JSON.stringify(consentPreferences));
-  document.getElementById("cookieBanner")?.setAttribute("hidden", "");
+  setCookieBannerOpen(false);
   updateGoogleConsent(consentPreferences);
 
   if (consentPreferences.maps) {
     loadGoogleMap();
+  } else {
+    unloadGoogleMap();
   }
 }
 
 function initializeCookieControls() {
   const banner = document.getElementById("cookieBanner");
   const mapButton = document.querySelector("[data-accept-maps]");
+  const manageButtons = document.querySelectorAll("[data-cookie-manage]");
 
   if (consentPreferences) {
     updateGoogleConsent(consentPreferences);
-    if (consentPreferences.maps) loadGoogleMap();
+    if (consentPreferences.maps) {
+      loadGoogleMap();
+    } else {
+      unloadGoogleMap();
+    }
   } else {
-    banner?.removeAttribute("hidden");
+    setCookieBannerOpen(true);
+  }
+
+  if (window.location.hash === "#cookie-settings") {
+    setCookieBannerOpen(true);
   }
 
   document.querySelector("[data-cookie-accept]")?.addEventListener("click", () => {
-    applyCookieConsent({ maps: true, analytics: true, marketing: true });
+    applyCookieConsent({ maps: true, analytics: false, marketing: false });
   });
 
   document.querySelector("[data-cookie-reject]")?.addEventListener("click", () => {
@@ -471,6 +579,14 @@ function initializeCookieControls() {
       maps: true,
       analytics: consentPreferences?.analytics || false,
       marketing: consentPreferences?.marketing || false
+    });
+  });
+
+  manageButtons.forEach((button) => {
+    button.addEventListener("click", (event) => {
+      event.preventDefault();
+      setCookieBannerOpen(true);
+      history.replaceState(null, "", "#cookie-settings");
     });
   });
 }

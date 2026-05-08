@@ -11,11 +11,10 @@
     <meta name="robots" content="index, follow" />
     <meta name="theme-color" content="#6b1a2e" />
     <meta name="author" content="Pirandello Rooms" />
-    <meta
-      name="keywords"
-      content="Pirandello Rooms Verona, camere Verona Borgo Milano, affittacamere Verona, B&B Verona, camere vicino San Zeno"
-    />
-    <link rel="canonical" href="https://erikmala.github.io/Bnb_pirandello/" />
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="alternate" hreflang="it" href="index.html?lang=it" />
+    <link rel="alternate" hreflang="en" href="index.html?lang=en" />
+    <link rel="alternate" hreflang="x-default" href="index.html" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="it_IT" />
     <meta property="og:title" content="Pirandello Rooms Verona" />
@@ -24,14 +23,8 @@
       content="Camere curate a Verona Borgo Milano: contatto diretto via WhatsApp, telefono o email."
     />
     <meta property="og:image" content="assets/camere/tripla/camera-tripla-01.jpg" />
-    <meta property="og:url" content="https://erikmala.github.io/Bnb_pirandello/" />
+    <meta property="og:url" content="/" />
     <meta name="twitter:card" content="summary_large_image" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Prata&display=swap"
-      rel="stylesheet"
-    />
     <link rel="stylesheet" href="styles.css" />
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -58,8 +51,8 @@
         },
         "telephone": "+393349840378",
         "email": "scacchetti.matteo99@gmail.com",
-        "url": "https://erikmala.github.io/Bnb_pirandello/",
-        "image": "https://erikmala.github.io/Bnb_pirandello/assets/camere/tripla/camera-tripla-01.jpg"
+        "url": "/",
+        "image": "assets/camere/tripla/camera-tripla-01.jpg"
       }
     </script>
   </head>
@@ -73,6 +66,7 @@
             <li><a href="#camere" data-i18n="nav.rooms">Camere</a></li>
             <li><a href="#mappa" data-i18n="nav.map">Mappa</a></li>
             <li><a href="#contatti" data-i18n="nav.contacts">Contatti</a></li>
+            <li><a href="#info-utili" data-i18n="nav.info">Info utili</a></li>
             <li><a href="#attivita" data-i18n="nav.activities">Attività</a></li>
           </ul>
           <div class="language-switcher" aria-label="Seleziona lingua">
@@ -163,8 +157,8 @@
                 referrerpolicy="no-referrer-when-downgrade"
               ></iframe>
               <div class="map-consent" id="mapConsent">
-                <p>La mappa usa Google Maps e può attivare servizi di terze parti.</p>
-                <button class="btn-secondary" type="button" data-accept-maps>Mostra mappa</button>
+                <p data-i18n="map.consentText">La mappa usa Google Maps e può attivare servizi di terze parti.</p>
+                <button class="btn-secondary" type="button" data-accept-maps data-i18n="map.showButton">Mostra mappa</button>
               </div>
             </div>
             <aside class="address-card">
@@ -197,7 +191,7 @@
             <div class="contact-actions">
               <a
                 class="btn-primary"
-                href="https://wa.me/393349840378"
+                href="https://wa.me/393349840378?text=Buongiorno%2C%20vorrei%20informazioni%20sulla%20disponibilit%C3%A0%20di%20Pirandello%20Rooms."
                 target="_blank"
                 rel="noopener noreferrer"
                 data-i18n="contacts.whatsapp"
@@ -211,6 +205,36 @@
                 >Email</a
               >
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section container" id="info-utili">
+        <div class="section-shell">
+          <div class="section-header">
+            <p class="eyebrow" data-i18n="info.eyebrow">Prima del soggiorno</p>
+            <h2 data-i18n="info.title">Informazioni utili</h2>
+            <p data-i18n="info.text">
+              Orari e condizioni provvisorie da confermare al momento della prenotazione diretta.
+            </p>
+          </div>
+          <div class="info-grid">
+            <article class="info-card">
+              <h3 data-i18n="info.checkin.title">Check-in</h3>
+              <p data-i18n="info.checkin.text">Dalle 15:00 alle 20:00, su appuntamento.</p>
+            </article>
+            <article class="info-card">
+              <h3 data-i18n="info.checkout.title">Check-out</h3>
+              <p data-i18n="info.checkout.text">Entro le 10:00 del giorno di partenza.</p>
+            </article>
+            <article class="info-card">
+              <h3 data-i18n="info.tax.title">Tassa di soggiorno</h3>
+              <p data-i18n="info.tax.text">Applicata secondo il regolamento del Comune di Verona.</p>
+            </article>
+            <article class="info-card">
+              <h3 data-i18n="info.payment.title">Pagamenti</h3>
+              <p data-i18n="info.payment.text">Modalità e condizioni da confermare in fase di prenotazione.</p>
+            </article>
           </div>
         </div>
       </section>
@@ -256,9 +280,14 @@
 
     <footer class="footer">
       <div class="container footer-content">
-        <p>Pirandello Rooms</p>
-        <p>
-          <span data-i18n="footer.text">Sito in aggiornamento con contenuti e foto ufficiali.</span>
+        <div class="footer-business">
+          <p>Ragione sociale: Pirandello Rooms S.r.l. (dato provvisorio)</p>
+          <p>Sede legale provvisoria: Via Luigi Pirandello n. 3, 37138 Verona (VR), Italia</p>
+          <p>CF 00000000000 · P.IVA 00000000000 · Capitale sociale Euro 10.000 i.v. (provvisorio)</p>
+          <p>CIN IT023091B400000000 · CIR 023091-LOC-00000 · REA VR-000000 (provvisori)</p>
+        </div>
+        <p class="footer-links">
+          <span data-i18n="footer.text">Dati societari provvisori in attesa di conferma ufficiale.</span>
           <a href="privacy.html">Privacy Policy</a>
           <a href="cookie-policy.html">Cookie Policy</a>
         </p>
@@ -267,18 +296,19 @@
 
     <div class="cookie-banner" id="cookieBanner" hidden>
       <div>
-        <p class="cookie-title">Privacy e cookie</p>
-        <p>
+        <p class="cookie-title" data-i18n="cookie.title">Privacy e cookie</p>
+        <p data-i18n="cookie.text">
           Usiamo funzioni tecniche per il sito e, solo con il tuo consenso, servizi esterni
-          come Google Maps. Il sito è predisposto per Google Ads/Consent Mode.
+          come Google Maps.
         </p>
       </div>
       <div class="cookie-actions">
-        <button class="btn-secondary" type="button" data-cookie-reject>Solo necessari</button>
-        <button class="btn-primary" type="button" data-cookie-accept>Accetta tutto</button>
+        <button class="btn-secondary" type="button" data-cookie-reject data-i18n="cookie.reject">Solo necessari</button>
+        <button class="btn-primary" type="button" data-cookie-accept data-i18n="cookie.accept">Accetta Google Maps</button>
       </div>
-      <a href="cookie-policy.html">Leggi la Cookie Policy</a>
+      <a href="cookie-policy.html" data-i18n="cookie.policy">Leggi la Cookie Policy</a>
     </div>
+    <a class="cookie-preferences-button" href="#cookie-settings" data-cookie-manage data-i18n="cookie.preferences">Preferenze cookie</a>
 
     <script src="script.js"></script>
   </body>

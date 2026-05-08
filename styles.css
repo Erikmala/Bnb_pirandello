@@ -64,7 +64,7 @@ body {
 }
 
 body {
-  font-family: "Manrope", sans-serif;
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
   color: var(--text);
   background: var(--panna);
   line-height: 1.5;
@@ -157,7 +157,7 @@ img {
 .brand {
   text-decoration: none;
   color: var(--cream);
-  font-family: "Prata", serif;
+  font-family: Georgia, "Times New Roman", serif;
   font-size: 1.5rem;
   letter-spacing: 0.03em;
 }
@@ -238,7 +238,7 @@ img {
 }
 
 .hero h1 {
-  font-family: "Prata", serif;
+  font-family: Georgia, "Times New Roman", serif;
   font-size: clamp(2.1rem, 5vw, 3.8rem);
   line-height: 1.15;
   margin: 0 0 1rem;
@@ -321,7 +321,7 @@ img {
 .section-header h2 {
   margin: 0;
   font-size: clamp(1.5rem, 3vw, 2.3rem);
-  font-family: "Prata", serif;
+  font-family: Georgia, "Times New Roman", serif;
   color: var(--bordeaux-dark);
 }
 
@@ -472,12 +472,14 @@ img {
 }
 
 .slider-dot {
-  width: 0.5rem;
-  height: 0.5rem;
+  width: 0.7rem;
+  height: 0.7rem;
+  padding: 0;
   border-radius: 50%;
   border: 1px solid rgba(255, 255, 255, 0.75);
   background: rgba(255, 255, 255, 0.25);
   cursor: pointer;
+  font: inherit;
   transition: background 0.2s ease;
 }
 
@@ -604,6 +606,13 @@ img {
   align-items: stretch;
 }
 
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+  align-items: stretch;
+}
+
 .activity-card {
   border: 1px solid rgba(var(--panna-line-rgb), 0.72);
   border-radius: var(--radius-md);
@@ -620,6 +629,28 @@ img {
 .activity-card:hover {
   transform: translateY(-2px);
   box-shadow: 0 10px 22px rgba(var(--bordeaux-rgb), 0.12);
+}
+
+.info-card {
+  border: 1px solid rgba(var(--panna-line-rgb), 0.72);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+  padding: 1rem;
+  box-shadow: var(--shadow-warm);
+  display: grid;
+  gap: 0.45rem;
+  align-content: start;
+}
+
+.info-card h3 {
+  margin: 0;
+  color: var(--bordeaux-dark);
+  font-size: 1.02rem;
+}
+
+.info-card p {
+  margin: 0;
+  color: var(--muted);
 }
 
 .activity-card h3 {
@@ -689,9 +720,29 @@ img {
 .footer-content {
   display: flex;
   justify-content: space-between;
-  gap: 1rem;
+  gap: 1.25rem;
   color: var(--muted);
   font-size: 0.9rem;
+}
+
+.footer-business {
+  display: grid;
+  gap: 0.25rem;
+}
+
+.footer-business p,
+.footer-links {
+  margin: 0;
+}
+
+.footer-business p:first-child {
+  color: var(--bordeaux-dark);
+  font-weight: 900;
+}
+
+.footer-links {
+  max-width: 360px;
+  text-align: right;
 }
 
 .footer-content a {
@@ -748,6 +799,31 @@ img {
   gap: 0.65rem;
 }
 
+.cookie-preferences-button {
+  position: fixed;
+  left: 1rem;
+  bottom: 1rem;
+  z-index: 21;
+  border: 1px solid rgba(var(--panna-line-rgb), 0.95);
+  border-radius: 999px;
+  background: var(--bordeaux);
+  color: var(--panna-light);
+  box-shadow: 0 12px 28px rgba(var(--bordeaux-rgb), 0.24);
+  font-size: 0.84rem;
+  font-weight: 900;
+  line-height: 1;
+  padding: 0.72rem 0.95rem;
+  text-decoration: none;
+}
+
+.cookie-preferences-button:hover {
+  background: var(--bordeaux-dark);
+}
+
+.cookie-banner-open .cookie-preferences-button {
+  display: none;
+}
+
 .legal-page {
   padding: 2rem 0 3rem;
 }
@@ -756,7 +832,7 @@ img {
   display: inline-flex;
   margin-bottom: 1rem;
   color: var(--bordeaux);
-  font-family: "Prata", serif;
+  font-family: Georgia, "Times New Roman", serif;
   font-size: 1.4rem;
   text-decoration: none;
 }
@@ -772,12 +848,17 @@ img {
 
 .legal-shell h1 {
   margin: 0;
-  font-family: "Prata", serif;
+  font-family: Georgia, "Times New Roman", serif;
 }
 
 .legal-shell h2 {
   margin: 1.2rem 0 0;
   font-size: 1.12rem;
+}
+
+:focus-visible {
+  outline: 3px solid var(--rose-soft);
+  outline-offset: 3px;
 }
 
 .legal-shell p,
@@ -798,6 +879,7 @@ img {
 
   .feature-grid,
   .about-grid,
+  .info-grid,
   .activity-grid {
     grid-template-columns: 1fr;
   }
@@ -893,6 +975,21 @@ img {
 
   .footer-content {
     flex-direction: column;
+  }
+
+  .footer-links {
+    max-width: none;
+    text-align: left;
+  }
+
+  .footer-content a {
+    display: inline-flex;
+    margin: 0.35rem 0.8rem 0 0;
+  }
+
+  .cookie-preferences-button {
+    left: 0.75rem;
+    bottom: 0.75rem;
   }
 }
 
