@@ -76,14 +76,59 @@
         </div>
       </nav>
 
-      <div class="hero-content container">
-        <p class="eyebrow" data-i18n="hero.eyebrow">Ospitalità veronese</p>
-        <h1 data-i18n="hero.title">Un soggiorno elegante, curato e autentico.</h1>
-        <p data-i18n="hero.text">
-          Pirandello Rooms unisce comfort moderno, ambienti curati e una posizione comoda
-          per vivere Verona con tranquillità.
-        </p>
-        <a class="btn-primary" href="#camere" data-i18n="hero.cta">Scopri le camere</a>
+      <div class="hero-content hero-layout container">
+        <div class="hero-copy">
+          <p class="eyebrow" data-i18n="hero.eyebrow">Ospitalità veronese</p>
+          <h1 data-i18n="hero.title">Un soggiorno elegante, curato e autentico.</h1>
+          <p data-i18n="hero.text">
+            Pirandello Rooms unisce comfort moderno, ambienti curati e una posizione comoda
+            per vivere Verona con tranquillità.
+          </p>
+          <div class="hero-actions">
+            <a class="btn-primary" href="#camere" data-i18n="hero.cta">Scopri le camere</a>
+            <a
+              class="btn-ghost"
+              href="https://wa.me/393349840378?text=Buongiorno%2C%20vorrei%20informazioni%20sulla%20disponibilit%C3%A0%20di%20Pirandello%20Rooms."
+              target="_blank"
+              rel="noopener noreferrer"
+              data-i18n="hero.secondaryCta"
+              >Richiedi disponibilità</a
+            >
+          </div>
+          <dl class="hero-highlights" aria-label="Punti di forza">
+            <div>
+              <dt data-i18n="hero.highlight1.value">Borgo Milano</dt>
+              <dd data-i18n="hero.highlight1.label">zona comoda di Verona</dd>
+            </div>
+            <div>
+              <dt data-i18n="hero.highlight2.value">6 camere</dt>
+              <dd data-i18n="hero.highlight2.label">triple, doppie e matrimoniali</dd>
+            </div>
+            <div>
+              <dt data-i18n="hero.highlight3.value">Contatto diretto</dt>
+              <dd data-i18n="hero.highlight3.label">senza commissioni</dd>
+            </div>
+          </dl>
+        </div>
+
+        <div class="hero-visual" aria-label="Anteprima fotografica delle camere">
+          <figure class="hero-photo hero-photo-main">
+            <img src="assets/camere/matrimoniale/camera-matrimoniale-01.jpg" alt="Camera matrimoniale con letto preparato e specchio dorato" />
+            <figcaption data-i18n="hero.photoMain">Camera matrimoniale</figcaption>
+          </figure>
+          <figure class="hero-photo hero-photo-side hero-photo-top">
+            <img src="assets/camere/tripla/camera-tripla-07.jpg" alt="Camera tripla luminosa con armadio in legno" />
+            <figcaption data-i18n="hero.photoTop">Tripla luminosa</figcaption>
+          </figure>
+          <figure class="hero-photo hero-photo-side hero-photo-bottom">
+            <img src="assets/camere/doppia/camera-doppia-letti-singoli-01.jpg" alt="Camera doppia con letti singoli e finiture in legno" />
+            <figcaption data-i18n="hero.photoBottom">Doppia con letti singoli</figcaption>
+          </figure>
+          <div class="hero-float-card">
+            <span data-i18n="hero.floatKicker">A Verona</span>
+            <strong data-i18n="hero.floatText">ambienti curati, caldi e pratici</strong>
+          </div>
+        </div>
       </div>
       <div class="hero-grid" aria-hidden="true"></div>
     </header>
@@ -122,6 +167,28 @@
               </p>
             </article>
           </div>
+        </div>
+      </section>
+
+      <section class="section container">
+        <div class="story-band">
+          <div class="story-media">
+            <img src="assets/camere/tripla/camera-tripla-08.jpg" alt="Dettaglio camera Pirandello Rooms con arredi in legno e luce naturale" />
+          </div>
+          <div class="story-copy">
+            <p class="eyebrow" data-i18n="story.eyebrow">Dettagli che accolgono</p>
+            <h2 data-i18n="story.title">Il calore del legno, la semplicità di sentirsi subito a proprio agio.</h2>
+            <p data-i18n="story.text">
+              Stanze luminose, tessili puliti, servizi essenziali e un contatto diretto prima
+              dell'arrivo: tutto pensato per un soggiorno senza complicazioni.
+            </p>
+          </div>
+          <ul class="comfort-list" aria-label="Servizi principali">
+            <li data-i18n="story.item1">Bagno privato</li>
+            <li data-i18n="story.item2">Aria condizionata</li>
+            <li data-i18n="story.item3">Scrivania</li>
+            <li data-i18n="story.item4">TV a schermo piatto</li>
+          </ul>
         </div>
       </section>
 
@@ -294,19 +361,77 @@
       </div>
     </footer>
 
-    <div class="cookie-banner" id="cookieBanner" hidden>
+    <div class="cookie-banner" id="cookieBanner" hidden role="region" aria-labelledby="cookieBannerTitle">
+      <button
+        class="cookie-close"
+        type="button"
+        data-cookie-close
+        aria-label="Chiudi e mantieni solo cookie necessari"
+      >
+        ×
+      </button>
       <div>
-        <p class="cookie-title" data-i18n="cookie.title">Privacy e cookie</p>
+        <p class="cookie-title" id="cookieBannerTitle" data-i18n="cookie.title">Privacy e cookie</p>
         <p data-i18n="cookie.text">
-          Usiamo funzioni tecniche per il sito e, solo con il tuo consenso, servizi esterni
-          come Google Maps.
+          Usiamo funzioni tecniche necessarie. Con il tuo consenso possiamo attivare servizi
+          esterni come Google Maps e, in futuro, strumenti di misurazione o marketing.
         </p>
       </div>
       <div class="cookie-actions">
-        <button class="btn-secondary" type="button" data-cookie-reject data-i18n="cookie.reject">Solo necessari</button>
-        <button class="btn-primary" type="button" data-cookie-accept data-i18n="cookie.accept">Accetta Google Maps</button>
+        <button class="btn-secondary" type="button" data-cookie-reject data-i18n="cookie.reject">Rifiuta tutto</button>
+        <button class="btn-secondary" type="button" data-cookie-customize data-i18n="cookie.customize">Personalizza</button>
+        <button class="btn-primary" type="button" data-cookie-accept data-i18n="cookie.accept">Accetta tutto</button>
       </div>
       <a href="cookie-policy.html" data-i18n="cookie.policy">Leggi la Cookie Policy</a>
+    </div>
+
+    <div class="cookie-modal" id="cookieModal" hidden role="dialog" aria-modal="true" aria-labelledby="cookieModalTitle">
+      <div class="cookie-modal-panel">
+        <button class="cookie-close" type="button" data-cookie-modal-close aria-label="Chiudi preferenze cookie">×</button>
+        <div class="cookie-modal-header">
+          <p class="eyebrow" data-i18n="cookie.preferencesEyebrow">Centro preferenze</p>
+          <h2 id="cookieModalTitle" data-i18n="cookie.preferencesTitle">Gestisci le preferenze cookie</h2>
+          <p data-i18n="cookie.preferencesText">
+            Puoi scegliere quali categorie attivare. I cookie tecnici necessari restano sempre
+            attivi perché servono al funzionamento del sito e alla memorizzazione della scelta.
+          </p>
+        </div>
+        <div class="cookie-options">
+          <label class="cookie-option">
+            <span>
+              <strong data-i18n="cookie.necessaryTitle">Necessari</strong>
+              <small data-i18n="cookie.necessaryText">Sempre attivi. Consentono navigazione, sicurezza, lingua e salvataggio della scelta.</small>
+            </span>
+            <input type="checkbox" checked disabled />
+          </label>
+          <label class="cookie-option">
+            <span>
+              <strong data-i18n="cookie.mapsTitle">Google Maps</strong>
+              <small data-i18n="cookie.mapsText">Mostra la mappa incorporata e può comportare richieste verso Google.</small>
+            </span>
+            <input type="checkbox" data-cookie-toggle="maps" />
+          </label>
+          <label class="cookie-option">
+            <span>
+              <strong data-i18n="cookie.analyticsTitle">Statistiche</strong>
+              <small data-i18n="cookie.analyticsText">Autorizza eventuali strumenti di misurazione del traffico, se installati.</small>
+            </span>
+            <input type="checkbox" data-cookie-toggle="analytics" />
+          </label>
+          <label class="cookie-option">
+            <span>
+              <strong data-i18n="cookie.marketingTitle">Marketing</strong>
+              <small data-i18n="cookie.marketingText">Autorizza eventuali strumenti promozionali o di remarketing, se installati.</small>
+            </span>
+            <input type="checkbox" data-cookie-toggle="marketing" />
+          </label>
+        </div>
+        <div class="cookie-modal-actions">
+          <button class="btn-secondary" type="button" data-cookie-reject data-i18n="cookie.reject">Rifiuta tutto</button>
+          <button class="btn-secondary" type="button" data-cookie-save data-i18n="cookie.save">Salva preferenze</button>
+          <button class="btn-primary" type="button" data-cookie-accept data-i18n="cookie.accept">Accetta tutto</button>
+        </div>
+      </div>
     </div>
     <a class="cookie-preferences-button" href="#cookie-settings" data-cookie-manage data-i18n="cookie.preferences">Preferenze cookie</a>
 

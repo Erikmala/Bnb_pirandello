@@ -31,7 +31,25 @@ const translations = {
       eyebrow: "Ospitalità veronese",
       title: "Un soggiorno elegante, curato e autentico.",
       text: "Pirandello Rooms unisce comfort moderno, ambienti curati e una posizione comoda per vivere Verona con tranquillità.",
-      cta: "Scopri le camere"
+      cta: "Scopri le camere",
+      secondaryCta: "Richiedi disponibilità",
+      highlight1: {
+        value: "Borgo Milano",
+        label: "zona comoda di Verona"
+      },
+      highlight2: {
+        value: "6 camere",
+        label: "triple, doppie e matrimoniali"
+      },
+      highlight3: {
+        value: "Contatto diretto",
+        label: "senza commissioni"
+      },
+      photoMain: "Camera matrimoniale",
+      photoTop: "Tripla luminosa",
+      photoBottom: "Doppia con letti singoli",
+      floatKicker: "A Verona",
+      floatText: "ambienti curati, caldi e pratici"
     },
     about: {
       title: "Chi siamo",
@@ -49,6 +67,15 @@ const translations = {
         text: "Camere dal design contemporaneo, con servizi essenziali per viaggi di piacere e soggiorni di lavoro."
       }
     },
+    story: {
+      eyebrow: "Dettagli che accolgono",
+      title: "Il calore del legno, la semplicità di sentirsi subito a proprio agio.",
+      text: "Stanze luminose, tessili puliti, servizi essenziali e un contatto diretto prima dell'arrivo: tutto pensato per un soggiorno senza complicazioni.",
+      item1: "Bagno privato",
+      item2: "Aria condizionata",
+      item3: "Scrivania",
+      item4: "TV a schermo piatto"
+    },
     rooms: {
       eyebrow: "Le nostre camere",
       title: "Tre tipologie, sei camere totali",
@@ -56,7 +83,8 @@ const translations = {
       prevPhoto: "Foto precedente",
       nextPhoto: "Foto successiva",
       photoAlt: "foto",
-      goToPhoto: "Vai alla foto"
+      goToPhoto: "Vai alla foto",
+      askAvailability: "Richiedi disponibilità"
     },
     map: {
       eyebrow: "Dove siamo",
@@ -111,11 +139,24 @@ const translations = {
     },
     cookie: {
       title: "Privacy e cookie",
-      text: "Usiamo funzioni tecniche per il sito e, solo con il tuo consenso, servizi esterni come Google Maps.",
-      reject: "Solo necessari",
-      accept: "Accetta Google Maps",
+      text: "Usiamo funzioni tecniche necessarie. Con il tuo consenso possiamo attivare servizi esterni come Google Maps e, in futuro, strumenti di misurazione o marketing.",
+      reject: "Rifiuta tutto",
+      customize: "Personalizza",
+      accept: "Accetta tutto",
+      save: "Salva preferenze",
       policy: "Leggi la Cookie Policy",
-      preferences: "Preferenze cookie"
+      preferences: "Preferenze cookie",
+      preferencesEyebrow: "Centro preferenze",
+      preferencesTitle: "Gestisci le preferenze cookie",
+      preferencesText: "Puoi scegliere quali categorie attivare. I cookie tecnici necessari restano sempre attivi perché servono al funzionamento del sito e alla memorizzazione della scelta.",
+      necessaryTitle: "Necessari",
+      necessaryText: "Sempre attivi. Consentono navigazione, sicurezza, lingua e salvataggio della scelta.",
+      mapsTitle: "Google Maps",
+      mapsText: "Mostra la mappa incorporata e può comportare richieste verso Google.",
+      analyticsTitle: "Statistiche",
+      analyticsText: "Autorizza eventuali strumenti di misurazione del traffico, se installati.",
+      marketingTitle: "Marketing",
+      marketingText: "Autorizza eventuali strumenti promozionali o di remarketing, se installati."
     }
   },
   en: {
@@ -133,7 +174,25 @@ const translations = {
       eyebrow: "Veronese hospitality",
       title: "An elegant, refined and authentic stay.",
       text: "Pirandello Rooms combines modern comfort, well-kept spaces and a convenient location for enjoying Verona with ease.",
-      cta: "Discover the rooms"
+      cta: "Discover the rooms",
+      secondaryCta: "Request availability",
+      highlight1: {
+        value: "Borgo Milano",
+        label: "a convenient Verona area"
+      },
+      highlight2: {
+        value: "6 rooms",
+        label: "triple, twin and double"
+      },
+      highlight3: {
+        value: "Direct contact",
+        label: "without commissions"
+      },
+      photoMain: "Double room",
+      photoTop: "Bright triple room",
+      photoBottom: "Twin room",
+      floatKicker: "In Verona",
+      floatText: "warm, practical and carefully kept spaces"
     },
     about: {
       title: "About us",
@@ -151,6 +210,15 @@ const translations = {
         text: "Contemporary rooms with essential services for leisure trips and business stays."
       }
     },
+    story: {
+      eyebrow: "Welcoming details",
+      title: "Warm wood finishes and the simple feeling of settling in right away.",
+      text: "Bright rooms, clean textiles, essential amenities and direct contact before arrival: everything is designed for an uncomplicated stay.",
+      item1: "Private bathroom",
+      item2: "Air conditioning",
+      item3: "Desk",
+      item4: "Flat-screen TV"
+    },
     rooms: {
       eyebrow: "Our rooms",
       title: "Three room types, six rooms in total",
@@ -158,7 +226,8 @@ const translations = {
       prevPhoto: "Previous photo",
       nextPhoto: "Next photo",
       photoAlt: "photo",
-      goToPhoto: "Go to photo"
+      goToPhoto: "Go to photo",
+      askAvailability: "Request availability"
     },
     map: {
       eyebrow: "Where we are",
@@ -213,11 +282,24 @@ const translations = {
     },
     cookie: {
       title: "Privacy and cookies",
-      text: "We use technical features for the website and, only with your consent, external services such as Google Maps.",
-      reject: "Necessary only",
-      accept: "Accept Google Maps",
+      text: "We use necessary technical features. With your consent we can activate external services such as Google Maps and, in the future, measurement or marketing tools.",
+      reject: "Reject all",
+      customize: "Customize",
+      accept: "Accept all",
+      save: "Save preferences",
       policy: "Read the Cookie Policy",
-      preferences: "Cookie preferences"
+      preferences: "Cookie preferences",
+      preferencesEyebrow: "Preference center",
+      preferencesTitle: "Manage cookie preferences",
+      preferencesText: "You can choose which categories to enable. Necessary technical cookies always remain active because they support website operation and store your choice.",
+      necessaryTitle: "Necessary",
+      necessaryText: "Always active. They support navigation, security, language and storage of your choice.",
+      mapsTitle: "Google Maps",
+      mapsText: "Shows the embedded map and may involve requests to Google.",
+      analyticsTitle: "Analytics",
+      analyticsText: "Allows traffic measurement tools, if installed.",
+      marketingTitle: "Marketing",
+      marketingText: "Allows promotional or remarketing tools, if installed."
     }
   }
 };
@@ -356,9 +438,18 @@ const requestedLanguage = new URLSearchParams(window.location.search).get("lang"
 const savedLanguage = localStorage.getItem("siteLanguage");
 let currentLanguage = translations[requestedLanguage] ? requestedLanguage : translations[savedLanguage] ? savedLanguage : "it";
 let consentPreferences = null;
+let revealObserver = null;
+const CONSENT_MAX_AGE_MS = 1000 * 60 * 60 * 24 * 180;
 
 try {
-  consentPreferences = JSON.parse(localStorage.getItem("cookieConsent") || "null");
+  const savedConsent = JSON.parse(localStorage.getItem("cookieConsent") || "null");
+  const savedAt = savedConsent?.savedAt ? Date.parse(savedConsent.savedAt) : 0;
+
+  if (savedConsent && savedAt && Date.now() - savedAt <= CONSENT_MAX_AGE_MS) {
+    consentPreferences = savedConsent;
+  } else if (savedConsent) {
+    localStorage.removeItem("cookieConsent");
+  }
 } catch {
   localStorage.removeItem("cookieConsent");
 }
@@ -374,6 +465,11 @@ function photosForRoom(room) {
 function createRoomCard(room, index) {
   const roomCopy = room.content[currentLanguage];
   const copy = translations[currentLanguage];
+  const availabilityText =
+    currentLanguage === "it"
+      ? `Buongiorno, vorrei informazioni sulla disponibilità della ${roomCopy.name} di Pirandello Rooms.`
+      : `Hello, I would like information about availability for the ${roomCopy.name} at Pirandello Rooms.`;
+  const availabilityUrl = `https://wa.me/393349840378?text=${encodeURIComponent(availabilityText)}`;
   const featureItems = roomCopy.features.map((item) => `<li>${item}</li>`).join("");
   const imageItems = photosForRoom(room)
     .map(
@@ -407,6 +503,7 @@ function createRoomCard(room, index) {
         </div>
         <p class="room-desc">${roomCopy.description}</p>
         <ul class="meta-list">${featureItems}</ul>
+        <a class="btn-secondary room-cta" href="${availabilityUrl}" target="_blank" rel="noopener noreferrer">${copy.rooms.askAvailability}</a>
       </div>
     </article>
   `;
@@ -458,6 +555,40 @@ function initializeRooms() {
         renderSlider(next);
       });
     });
+  });
+
+  initializeRevealEffects();
+}
+
+function initializeRevealEffects() {
+  const targets = document.querySelectorAll(
+    ".section-shell, .story-band, .room-card, .feature-card, .info-card, .activity-card, .contact-panel"
+  );
+
+  if (!targets.length) return;
+
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches || !("IntersectionObserver" in window)) {
+    targets.forEach((target) => target.classList.add("is-visible"));
+    return;
+  }
+
+  if (!revealObserver) {
+    revealObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add("is-visible");
+          revealObserver.unobserve(entry.target);
+        });
+      },
+      { threshold: 0.14, rootMargin: "0px 0px -40px 0px" }
+    );
+  }
+
+  targets.forEach((target) => {
+    if (target.classList.contains("is-visible")) return;
+    target.classList.add("revealable");
+    revealObserver.observe(target);
   });
 }
 
@@ -526,17 +657,50 @@ function setCookieBannerOpen(isOpen) {
   document.body.classList.toggle("cookie-banner-open", isOpen);
 }
 
+function setCookieModalOpen(isOpen) {
+  const modal = document.getElementById("cookieModal");
+  if (!modal) return;
+
+  modal.toggleAttribute("hidden", !isOpen);
+  document.body.classList.toggle("cookie-modal-open", isOpen);
+
+  if (isOpen) {
+    populateCookiePreferenceControls();
+    modal.querySelector("[data-cookie-toggle='maps']")?.focus();
+  }
+}
+
+function populateCookiePreferenceControls() {
+  const defaults = consentPreferences || { maps: false, analytics: false, marketing: false };
+
+  document.querySelectorAll("[data-cookie-toggle]").forEach((input) => {
+    input.checked = Boolean(defaults[input.dataset.cookieToggle]);
+  });
+}
+
+function readCookiePreferenceControls() {
+  const preferences = { maps: false, analytics: false, marketing: false };
+
+  document.querySelectorAll("[data-cookie-toggle]").forEach((input) => {
+    preferences[input.dataset.cookieToggle] = input.checked;
+  });
+
+  return preferences;
+}
+
 function applyCookieConsent(preferences) {
   consentPreferences = {
     necessary: true,
     preferences: true,
     maps: Boolean(preferences.maps),
     analytics: Boolean(preferences.analytics),
-    marketing: Boolean(preferences.marketing)
+    marketing: Boolean(preferences.marketing),
+    savedAt: new Date().toISOString()
   };
 
   localStorage.setItem("cookieConsent", JSON.stringify(consentPreferences));
   setCookieBannerOpen(false);
+  setCookieModalOpen(false);
   updateGoogleConsent(consentPreferences);
 
   if (consentPreferences.maps) {
@@ -547,7 +711,6 @@ function applyCookieConsent(preferences) {
 }
 
 function initializeCookieControls() {
-  const banner = document.getElementById("cookieBanner");
   const mapButton = document.querySelector("[data-accept-maps]");
   const manageButtons = document.querySelectorAll("[data-cookie-manage]");
 
@@ -563,15 +726,36 @@ function initializeCookieControls() {
   }
 
   if (window.location.hash === "#cookie-settings") {
-    setCookieBannerOpen(true);
+    setCookieBannerOpen(false);
+    setCookieModalOpen(true);
   }
 
-  document.querySelector("[data-cookie-accept]")?.addEventListener("click", () => {
-    applyCookieConsent({ maps: true, analytics: false, marketing: false });
+  document.querySelectorAll("[data-cookie-accept]").forEach((button) => {
+    button.addEventListener("click", () => {
+      applyCookieConsent({ maps: true, analytics: true, marketing: true });
+    });
   });
 
-  document.querySelector("[data-cookie-reject]")?.addEventListener("click", () => {
-    applyCookieConsent({ maps: false, analytics: false, marketing: false });
+  document.querySelectorAll("[data-cookie-reject], [data-cookie-close]").forEach((button) => {
+    button.addEventListener("click", () => {
+      applyCookieConsent({ maps: false, analytics: false, marketing: false });
+    });
+  });
+
+  document.querySelector("[data-cookie-customize]")?.addEventListener("click", () => {
+    setCookieBannerOpen(false);
+    setCookieModalOpen(true);
+  });
+
+  document.querySelector("[data-cookie-save]")?.addEventListener("click", () => {
+    applyCookieConsent(readCookiePreferenceControls());
+  });
+
+  document.querySelector("[data-cookie-modal-close]")?.addEventListener("click", () => {
+    setCookieModalOpen(false);
+    if (!consentPreferences) {
+      setCookieBannerOpen(true);
+    }
   });
 
   mapButton?.addEventListener("click", () => {
@@ -585,9 +769,22 @@ function initializeCookieControls() {
   manageButtons.forEach((button) => {
     button.addEventListener("click", (event) => {
       event.preventDefault();
-      setCookieBannerOpen(true);
+      setCookieBannerOpen(false);
+      setCookieModalOpen(true);
       history.replaceState(null, "", "#cookie-settings");
     });
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key !== "Escape") return;
+
+    const modal = document.getElementById("cookieModal");
+    if (!modal || modal.hidden) return;
+
+    setCookieModalOpen(false);
+    if (!consentPreferences) {
+      setCookieBannerOpen(true);
+    }
   });
 }
 
@@ -598,4 +795,5 @@ document.querySelectorAll("[data-lang-toggle]").forEach((button) => {
 });
 
 applyLanguage(currentLanguage);
+initializeRevealEffects();
 initializeCookieControls();
