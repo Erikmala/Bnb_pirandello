@@ -135,7 +135,7 @@ const translations = {
       bentegodi: "A circa 8 minuti a piedi."
     },
     footer: {
-      text: "Dati societari provvisori in attesa di conferma ufficiale."
+      text: "Dati identificativi aggiornati; P.IVA in attesa di comunicazione."
     },
     cookie: {
       title: "Privacy e cookie",
@@ -278,7 +278,7 @@ const translations = {
       bentegodi: "About 8 minutes on foot."
     },
     footer: {
-      text: "Temporary business details pending official confirmation."
+      text: "Identification details updated; VAT number pending communication."
     },
     cookie: {
       title: "Privacy and cookies",
@@ -518,7 +518,10 @@ function initializeRooms() {
   document.querySelectorAll("[data-slider]").forEach((sliderCard) => {
     const images = sliderCard.querySelectorAll(".slider-image");
     const dots = sliderCard.querySelectorAll(".slider-dot");
+    const sliderTrack = sliderCard.querySelector(".slider-track");
     let currentIndex = 0;
+    let touchStartX = null;
+    let touchStartY = null;
 
     images.forEach((img) => {
       img.addEventListener("error", () => {
@@ -554,6 +557,46 @@ function initializeRooms() {
         const next = Number(dot.getAttribute("data-dot"));
         renderSlider(next);
       });
+    });
+
+    sliderTrack?.addEventListener(
+      "touchstart",
+      (event) => {
+        if (event.touches.length !== 1) {
+          touchStartX = null;
+          touchStartY = null;
+          return;
+        }
+
+        touchStartX = event.touches[0].clientX;
+        touchStartY = event.touches[0].clientY;
+      },
+      { passive: true }
+    );
+
+    sliderTrack?.addEventListener(
+      "touchend",
+      (event) => {
+        if (touchStartX === null || touchStartY === null || event.changedTouches.length !== 1) return;
+
+        const touch = event.changedTouches[0];
+        const deltaX = touch.clientX - touchStartX;
+        const deltaY = touch.clientY - touchStartY;
+        const horizontalSwipe = Math.abs(deltaX) >= 44 && Math.abs(deltaX) > Math.abs(deltaY) * 1.25;
+
+        touchStartX = null;
+        touchStartY = null;
+
+        if (!horizontalSwipe) return;
+
+        renderSlider(deltaX < 0 ? currentIndex + 1 : currentIndex - 1);
+      },
+      { passive: true }
+    );
+
+    sliderTrack?.addEventListener("touchcancel", () => {
+      touchStartX = null;
+      touchStartY = null;
     });
   });
 
