@@ -105,7 +105,7 @@ const translations = {
     info: {
       eyebrow: "Prima del soggiorno",
       title: "Informazioni utili",
-      text: "Orari e condizioni provvisorie da confermare al momento della prenotazione diretta.",
+      text: "Orari e condizioni da confermare al momento della prenotazione diretta.",
       checkin: {
         title: "Check-in",
         text: "Dalle 15:00 alle 20:00, su appuntamento."
@@ -116,7 +116,7 @@ const translations = {
       },
       tax: {
         title: "Tassa di soggiorno",
-        text: "Applicata secondo il regolamento del Comune di Verona."
+        text: "3,50 € a persona a notte, applicata secondo le regole del Comune di Verona."
       },
       payment: {
         title: "Pagamenti",
@@ -135,7 +135,7 @@ const translations = {
       bentegodi: "A circa 8 minuti a piedi."
     },
     footer: {
-      text: "Dati identificativi aggiornati; P.IVA in attesa di comunicazione."
+      text: "Dati identificativi aggiornati; P.IVA: 04231750367"
     },
     cookie: {
       title: "Privacy e cookie",
@@ -248,7 +248,7 @@ const translations = {
     info: {
       eyebrow: "Before your stay",
       title: "Useful information",
-      text: "Provisional times and conditions to be confirmed when booking directly.",
+      text: "Times and conditions will be confirmed when booking directly.",
       checkin: {
         title: "Check-in",
         text: "From 3:00 pm to 8:00 pm, by appointment."
@@ -259,7 +259,7 @@ const translations = {
       },
       tax: {
         title: "City tax",
-        text: "Applied according to the rules of the Municipality of Verona."
+        text: "€3.50 per person per night, applied according to the rules of the Municipality of Verona."
       },
       payment: {
         title: "Payments",
@@ -278,7 +278,7 @@ const translations = {
       bentegodi: "About 8 minutes on foot."
     },
     footer: {
-      text: "Identification details updated; VAT number pending communication."
+      text: "Identification details updated; VAT number: 04231750367"
     },
     cookie: {
       title: "Privacy and cookies",
@@ -321,32 +321,34 @@ const roomTypes = [
     content: {
       it: {
         name: "Camera Tripla",
-        availability: "2 camere disponibili",
+        availability: "2 camere triple disponibili",
         description: "Soluzione ideale per tre ospiti, con un letto matrimoniale e un letto singolo.",
         features: [
-          "3 ospiti",
-          "1 letto matrimoniale",
-          "1 letto singolo",
+          "fino a 3 ospiti",
+          "1 letto matrimoniale e 1 letto singolo",
           "Bagno privato in camera",
           "Aria condizionata",
           "TV a schermo piatto",
           "Frigorifero o minibar",
-          "Scrivania e armadio"
+          "asciugacapelli",
+          "Scrivania e armadio",
+          "Wifi gratuito"
         ]
       },
       en: {
         name: "Triple Room",
-        availability: "2 rooms available",
+        availability: "2 triple rooms available",
         description: "Ideal for three guests, with one double bed and one single bed.",
         features: [
-          "3 guests",
-          "1 double bed",
-          "1 single bed",
+          "up to 3 guests",
+          "1 double bed and 1 single bed",
           "Private en-suite bathroom",
           "Air conditioning",
           "Flat-screen TV",
           "Fridge or minibar",
-          "Desk and wardrobe"
+          "Hairdryer",
+          "Desk and wardrobe",
+          "Free wifi"
         ]
       }
     }
@@ -358,32 +360,34 @@ const roomTypes = [
     content: {
       it: {
         name: "Camera Matrimoniale",
-        availability: "3 camere disponibili",
+        availability: "3 camere matrimoniali disponibili",
         description: "Camera pensata per due ospiti, con letto matrimoniale e ambienti curati.",
         features: [
-          "2 ospiti",
+          "fino a 2 ospiti",
           "1 letto matrimoniale",
           "Bagno privato in camera",
           "Aria condizionata",
           "TV a schermo piatto",
           "Frigorifero o minibar",
           "Asciugacapelli",
-          "Scrivania e armadio"
+          "Scrivania e armadio",
+          "Wifi gratuito"
         ]
       },
       en: {
         name: "Double Room",
-        availability: "3 rooms available",
+        availability: "3 double rooms available",
         description: "A room designed for two guests, with one double bed and well-kept interiors.",
         features: [
-          "2 guests",
+          "up to 2 guests",
           "1 double bed",
           "Private en-suite bathroom",
           "Air conditioning",
           "Flat-screen TV",
           "Fridge or minibar",
           "Hairdryer",
-          "Desk and wardrobe"
+          "Desk and wardrobe",
+          "Free wifi"
         ]
       }
     }
@@ -402,32 +406,34 @@ const roomTypes = [
     content: {
       it: {
         name: "Doppia con Letti Singoli",
-        availability: "1 camera disponibile",
+        availability: "1 camera con letti singoli disponibile",
         description: "Camera per due ospiti con due letti singoli separati, pratica e confortevole.",
         features: [
-          "2 ospiti",
+          "fino a 2 ospiti",
           "2 letti singoli separati",
           "Bagno privato in camera",
           "Aria condizionata",
           "TV a schermo piatto",
           "Frigorifero o minibar",
           "Asciugacapelli",
-          "Scrivania e armadio"
+          "Scrivania e armadio",
+          "Wifi gratuito"
         ]
       },
       en: {
         name: "Twin Room",
-        availability: "1 room available",
+        availability: "1 twin room available",
         description: "A practical and comfortable room for two guests, with two separate single beds.",
         features: [
-          "2 guests",
+          "up to 2 guests",
           "2 separate single beds",
           "Private en-suite bathroom",
           "Air conditioning",
           "Flat-screen TV",
           "Fridge or minibar",
           "Hairdryer",
-          "Desk and wardrobe"
+          "Desk and wardrobe",
+          "Free wifi"
         ]
       }
     }
