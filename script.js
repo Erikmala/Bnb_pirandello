@@ -162,6 +162,14 @@ const translations = {
       analyticsText: "Autorizza eventuali strumenti di misurazione del traffico, se installati.",
       marketingTitle: "Marketing",
       marketingText: "Autorizza eventuali strumenti promozionali o di remarketing, se installati."
+    },
+    a11y: {
+      languageSwitcher: "Seleziona lingua",
+      heroHighlights: "Punti di forza",
+      heroVisual: "Anteprima fotografica delle camere",
+      comfortList: "Servizi principali",
+      cookieClose: "Chiudi e mantieni solo cookie necessari",
+      cookieModalClose: "Chiudi preferenze cookie"
     }
   },
   en: {
@@ -310,6 +318,14 @@ const translations = {
       analyticsText: "Allows traffic measurement tools, if installed.",
       marketingTitle: "Marketing",
       marketingText: "Allows promotional or remarketing tools, if installed."
+    },
+    a11y: {
+      languageSwitcher: "Select language",
+      heroHighlights: "Highlights",
+      heroVisual: "Room photo preview",
+      comfortList: "Main amenities",
+      cookieClose: "Close and keep necessary cookies only",
+      cookieModalClose: "Close cookie preferences"
     }
   }
 };
@@ -663,6 +679,11 @@ function applyLanguage(language) {
   document.querySelectorAll("[data-i18n]").forEach((element) => {
     const value = resolvePath(copy, element.dataset.i18n);
     if (value) element.textContent = value;
+  });
+
+  document.querySelectorAll("[data-a11y-label]").forEach((element) => {
+    const value = resolvePath(copy.a11y, element.dataset.a11yLabel);
+    if (value) element.setAttribute("aria-label", value);
   });
 
   updateFixedWhatsappLinks(language);

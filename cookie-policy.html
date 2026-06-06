@@ -9,9 +9,10 @@
       content="Cookie Policy di Pirandello Rooms Verona: cookie tecnici, preferenze locali, Google Maps, statistiche, marketing e gestione del consenso."
     />
     <meta name="robots" content="index, follow" />
-    <link rel="alternate" hreflang="it" href="cookie-policy.html?lang=it" />
-    <link rel="alternate" hreflang="en" href="cookie-policy.html?lang=en" />
-    <link rel="alternate" hreflang="x-default" href="cookie-policy.html" />
+    <link rel="canonical" href="https://pirandellorooms.it/cookie-policy.html" />
+    <link rel="alternate" hreflang="it" href="https://pirandellorooms.it/cookie-policy.html?lang=it" />
+    <link rel="alternate" hreflang="en" href="https://pirandellorooms.it/cookie-policy.html?lang=en" />
+    <link rel="alternate" hreflang="x-default" href="https://pirandellorooms.it/cookie-policy.html" />
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="styles.css" />
   </head>
@@ -19,7 +20,7 @@
     <main class="legal-page container">
       <div class="legal-topbar">
         <a class="brand-link" href="index.html">Pirandello Rooms</a>
-        <div class="language-switcher" aria-label="Seleziona lingua">
+        <div class="language-switcher" aria-label="Seleziona lingua" data-legal-language-label>
           <button class="lang-btn" type="button" data-lang-toggle="it" aria-pressed="false">IT</button>
           <button class="lang-btn" type="button" data-lang-toggle="en" aria-pressed="false">EN</button>
         </div>
@@ -181,6 +182,18 @@
     <script>
       const legalRequestedLanguage = new URLSearchParams(window.location.search).get("lang");
       const legalSavedLanguage = localStorage.getItem("siteLanguage");
+      const legalPageMeta = {
+        it: {
+          title: "Cookie Policy | Pirandello Rooms Verona",
+          description: "Cookie Policy di Pirandello Rooms Verona: cookie tecnici, preferenze locali, Google Maps, statistiche, marketing e gestione del consenso.",
+          languageLabel: "Seleziona lingua"
+        },
+        en: {
+          title: "Cookie Policy | Pirandello Rooms Verona",
+          description: "Cookie Policy for Pirandello Rooms Verona: technical cookies, local preferences, Google Maps, analytics, marketing and consent management.",
+          languageLabel: "Select language"
+        }
+      };
       const legalCurrentLanguage = legalRequestedLanguage === "en" || legalRequestedLanguage === "it"
         ? legalRequestedLanguage
         : legalSavedLanguage === "en" || legalSavedLanguage === "it"
@@ -190,6 +203,11 @@
       function applyLegalLanguage(language) {
         document.documentElement.lang = language;
         localStorage.setItem("siteLanguage", language);
+
+        const copy = legalPageMeta[language];
+        document.title = copy.title;
+        document.querySelector('meta[name="description"]')?.setAttribute("content", copy.description);
+        document.querySelector("[data-legal-language-label]")?.setAttribute("aria-label", copy.languageLabel);
 
         document.querySelectorAll("[data-lang-section]").forEach((section) => {
           section.hidden = section.getAttribute("data-lang-section") !== language;

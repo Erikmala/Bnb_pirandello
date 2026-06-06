@@ -70,7 +70,7 @@
             <li><a href="#info-utili" data-i18n="nav.info">Info utili</a></li>
             <li><a href="#attivita" data-i18n="nav.activities">Attività</a></li>
           </ul>
-          <div class="language-switcher" aria-label="Seleziona lingua">
+          <div class="language-switcher" aria-label="Seleziona lingua" data-a11y-label="languageSwitcher">
             <button class="lang-btn active" type="button" data-lang-toggle="it" aria-pressed="true">IT</button>
             <button class="lang-btn" type="button" data-lang-toggle="en" aria-pressed="false">EN</button>
           </div>
@@ -97,7 +97,7 @@
               >Richiedi disponibilità</a
             >
           </div>
-          <dl class="hero-highlights" aria-label="Punti di forza">
+          <dl class="hero-highlights" aria-label="Punti di forza" data-a11y-label="heroHighlights">
             <div>
               <dt data-i18n="hero.highlight1.value">Borgo Milano</dt>
               <dd data-i18n="hero.highlight1.label">zona comoda di Verona</dd>
@@ -113,7 +113,7 @@
           </dl>
         </div>
 
-        <div class="hero-visual" aria-label="Anteprima fotografica delle camere">
+        <div class="hero-visual" aria-label="Anteprima fotografica delle camere" data-a11y-label="heroVisual">
           <figure class="hero-photo hero-photo-main">
             <img src="assets/camere/matrimoniale/camera-matrimoniale-01.jpg" alt="Camera matrimoniale con letto preparato e specchio dorato" />
             <figcaption data-i18n="hero.photoMain">Camera matrimoniale</figcaption>
@@ -185,7 +185,7 @@
               dell'arrivo: tutto pensato per un soggiorno senza complicazioni.
             </p>
           </div>
-          <ul class="comfort-list" aria-label="Servizi principali">
+          <ul class="comfort-list" aria-label="Servizi principali" data-a11y-label="comfortList">
             <li data-i18n="story.item1">Bagno privato</li>
             <li data-i18n="story.item2">Aria condizionata</li>
             <li data-i18n="story.item3">Scrivania</li>
@@ -369,6 +369,7 @@
         type="button"
         data-cookie-close
         aria-label="Chiudi e mantieni solo cookie necessari"
+        data-a11y-label="cookieClose"
       >
         ×
       </button>
@@ -389,7 +390,7 @@
 
     <div class="cookie-modal" id="cookieModal" hidden role="dialog" aria-modal="true" aria-labelledby="cookieModalTitle">
       <div class="cookie-modal-panel">
-        <button class="cookie-close" type="button" data-cookie-modal-close aria-label="Chiudi preferenze cookie">×</button>
+        <button class="cookie-close" type="button" data-cookie-modal-close data-a11y-label="cookieModalClose" aria-label="Chiudi preferenze cookie">×</button>
         <div class="cookie-modal-header">
           <p class="eyebrow" data-i18n="cookie.preferencesEyebrow">Centro preferenze</p>
           <h2 id="cookieModalTitle" data-i18n="cookie.preferencesTitle">Gestisci le preferenze cookie</h2>

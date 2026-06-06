@@ -9,9 +9,10 @@
       content="Privacy Policy di Pirandello Rooms Verona: dati trattati, finalita, basi giuridiche, conservazione, fornitori e diritti dell'utente."
     />
     <meta name="robots" content="index, follow" />
-    <link rel="alternate" hreflang="it" href="privacy.html?lang=it" />
-    <link rel="alternate" hreflang="en" href="privacy.html?lang=en" />
-    <link rel="alternate" hreflang="x-default" href="privacy.html" />
+    <link rel="canonical" href="https://pirandellorooms.it/privacy.html" />
+    <link rel="alternate" hreflang="it" href="https://pirandellorooms.it/privacy.html?lang=it" />
+    <link rel="alternate" hreflang="en" href="https://pirandellorooms.it/privacy.html?lang=en" />
+    <link rel="alternate" hreflang="x-default" href="https://pirandellorooms.it/privacy.html" />
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="styles.css" />
   </head>
@@ -19,7 +20,7 @@
     <main class="legal-page container">
       <div class="legal-topbar">
         <a class="brand-link" href="index.html">Pirandello Rooms</a>
-        <div class="language-switcher" aria-label="Seleziona lingua">
+        <div class="language-switcher" aria-label="Seleziona lingua" data-legal-language-label>
           <button class="lang-btn" type="button" data-lang-toggle="it" aria-pressed="false">IT</button>
           <button class="lang-btn" type="button" data-lang-toggle="en" aria-pressed="false">EN</button>
         </div>
@@ -194,6 +195,18 @@
     <script>
       const legalRequestedLanguage = new URLSearchParams(window.location.search).get("lang");
       const legalSavedLanguage = localStorage.getItem("siteLanguage");
+      const legalPageMeta = {
+        it: {
+          title: "Privacy Policy | Pirandello Rooms Verona",
+          description: "Privacy Policy di Pirandello Rooms Verona: dati trattati, finalita, basi giuridiche, conservazione, fornitori e diritti dell'utente.",
+          languageLabel: "Seleziona lingua"
+        },
+        en: {
+          title: "Privacy Policy | Pirandello Rooms Verona",
+          description: "Privacy Policy for Pirandello Rooms Verona: processed data, purposes, legal bases, retention, providers and user rights.",
+          languageLabel: "Select language"
+        }
+      };
       const legalCurrentLanguage = legalRequestedLanguage === "en" || legalRequestedLanguage === "it"
         ? legalRequestedLanguage
         : legalSavedLanguage === "en" || legalSavedLanguage === "it"
@@ -203,6 +216,11 @@
       function applyLegalLanguage(language) {
         document.documentElement.lang = language;
         localStorage.setItem("siteLanguage", language);
+
+        const copy = legalPageMeta[language];
+        document.title = copy.title;
+        document.querySelector('meta[name="description"]')?.setAttribute("content", copy.description);
+        document.querySelector("[data-legal-language-label]")?.setAttribute("aria-label", copy.languageLabel);
 
         document.querySelectorAll("[data-lang-section]").forEach((section) => {
           section.hidden = section.getAttribute("data-lang-section") !== language;
