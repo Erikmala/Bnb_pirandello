@@ -1350,6 +1350,10 @@ img {
   line-height: 1.65;
 }
 
+.legal-shell[hidden] {
+  display: none !important;
+}
+
 .legal-shell h1,
 .legal-shell h2 {
   color: var(--bordeaux-dark);

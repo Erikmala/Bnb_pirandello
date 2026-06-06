@@ -135,7 +135,12 @@ const translations = {
       bentegodi: "A circa 8 minuti a piedi."
     },
     footer: {
-      text: "Dati identificativi aggiornati; P.IVA: 04231750367"
+      businessName: "Pirandello Rooms di Scacchetti Matteo",
+      registeredOffice: "Sede legale: Via Luigi Pirandello n. 3, 37138 Verona (VR), Italia",
+      vat: "P.IVA del titolare: 04231750367",
+      codes: "CIN IT023091B44FKVXBBC · CIR 023091-LOC-08075",
+      privacy: "Privacy Policy",
+      cookie: "Cookie Policy"
     },
     cookie: {
       title: "Privacy e cookie",
@@ -278,7 +283,12 @@ const translations = {
       bentegodi: "About 8 minutes on foot."
     },
     footer: {
-      text: "Identification details updated; VAT number: 04231750367"
+      businessName: "Pirandello Rooms by Scacchetti Matteo",
+      registeredOffice: "Registered office: Via Luigi Pirandello n. 3, 37138 Verona (VR), Italy",
+      vat: "Owner VAT number: 04231750367",
+      codes: "CIN IT023091B44FKVXBBC · CIR 023091-LOC-08075",
+      privacy: "Privacy Policy",
+      cookie: "Cookie Policy"
     },
     cookie: {
       title: "Privacy and cookies",
@@ -330,9 +340,9 @@ const roomTypes = [
           "Aria condizionata",
           "TV a schermo piatto",
           "Frigorifero o minibar",
-          "asciugacapelli",
+          "Asciugacapelli",
           "Scrivania e armadio",
-          "Wifi gratuito"
+          "Wi-Fi gratuito"
         ]
       },
       en: {
@@ -348,7 +358,7 @@ const roomTypes = [
           "Fridge or minibar",
           "Hairdryer",
           "Desk and wardrobe",
-          "Free wifi"
+          "Free Wi-Fi"
         ]
       }
     }
@@ -371,7 +381,7 @@ const roomTypes = [
           "Frigorifero o minibar",
           "Asciugacapelli",
           "Scrivania e armadio",
-          "Wifi gratuito"
+          "Wi-Fi gratuito"
         ]
       },
       en: {
@@ -387,7 +397,7 @@ const roomTypes = [
           "Fridge or minibar",
           "Hairdryer",
           "Desk and wardrobe",
-          "Free wifi"
+          "Free Wi-Fi"
         ]
       }
     }
@@ -417,7 +427,7 @@ const roomTypes = [
           "Frigorifero o minibar",
           "Asciugacapelli",
           "Scrivania e armadio",
-          "Wifi gratuito"
+          "Wi-Fi gratuito"
         ]
       },
       en: {
@@ -433,7 +443,7 @@ const roomTypes = [
           "Fridge or minibar",
           "Hairdryer",
           "Desk and wardrobe",
-          "Free wifi"
+          "Free Wi-Fi"
         ]
       }
     }
@@ -655,6 +665,9 @@ function applyLanguage(language) {
     if (value) element.textContent = value;
   });
 
+  updateFixedWhatsappLinks(language);
+  updateLanguageAwareLinks(language);
+
   document.querySelectorAll("[data-lang-toggle]").forEach((button) => {
     const isActive = button.dataset.langToggle === language;
     button.classList.toggle("active", isActive);
@@ -662,6 +675,26 @@ function applyLanguage(language) {
   });
 
   initializeRooms();
+}
+
+function updateFixedWhatsappLinks(language) {
+  const message =
+    language === "it"
+      ? "Buongiorno, vorrei informazioni sulla disponibilità di Pirandello Rooms."
+      : "Hello, I would like information about availability at Pirandello Rooms.";
+  const url = `https://wa.me/393349840378?text=${encodeURIComponent(message)}`;
+
+  document.querySelectorAll("[data-whatsapp-link]").forEach((link) => {
+    link.setAttribute("href", url);
+  });
+}
+
+function updateLanguageAwareLinks(language) {
+  document.querySelectorAll("[data-lang-href]").forEach((link) => {
+    const baseHref = link.getAttribute("data-lang-href");
+    if (!baseHref) return;
+    link.setAttribute("href", `${baseHref}?lang=${language}`);
+  });
 }
 
 function updateGoogleConsent(preferences) {
