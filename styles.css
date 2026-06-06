@@ -1599,6 +1599,21 @@ img {
     padding: 0.75rem;
   }
 
+  /* Evita che il pulsante fisso copra i link nel footer su schermi piccoli */
+  body {
+    padding-bottom: calc(3.5rem + env(safe-area-inset-bottom));
+  }
+
+  /* Assicura che la X di chiusura del modal sia visibile anche con le barre del browser sui telefoni */
+  .cookie-modal-panel {
+    padding-top: calc(1rem + env(safe-area-inset-top));
+    max-height: calc(100vh - calc(1rem + env(safe-area-inset-top)) - calc(1rem + env(safe-area-inset-bottom)));
+  }
+
+  .cookie-modal .cookie-close {
+    top: calc(0.6rem + env(safe-area-inset-top));
+  }
+
   .cookie-modal-panel {
     max-height: calc(100vh - 1.5rem);
   }

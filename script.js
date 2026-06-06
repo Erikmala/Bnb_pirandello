@@ -838,6 +838,13 @@ function initializeCookieControls() {
     if (!consentPreferences) {
       setCookieBannerOpen(true);
     }
+
+    // If opening the modal pushed a history entry, go back to restore the URL
+    try {
+      if (window.location.hash === "#cookie-settings") history.back();
+    } catch (e) {
+      /* ignore */
+    }
   });
 
   mapButton?.addEventListener("click", () => {
@@ -853,8 +860,25 @@ function initializeCookieControls() {
       event.preventDefault();
       setCookieBannerOpen(false);
       setCookieModalOpen(true);
-      history.replaceState(null, "", "#cookie-settings");
+      try {
+        history.pushState({ cookieModal: true }, "", "#cookie-settings");
+      } catch (e) {
+        // Some browsers restrict history manipulation in certain modes — ignore
+      }
     });
+  });
+
+  // Close the cookie modal when the user navigates back (popstate)
+  window.addEventListener("popstate", () => {
+    const modal = document.getElementById("cookieModal");
+    if (!modal) return;
+
+    if (window.location.hash !== "#cookie-settings" && !modal.hidden) {
+      setCookieModalOpen(false);
+      if (!consentPreferences) {
+        setCookieBannerOpen(true);
+      }
+    }
   });
 
   document.addEventListener("keydown", (event) => {
