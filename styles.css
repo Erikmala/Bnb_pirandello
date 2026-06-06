@@ -1590,10 +1590,37 @@ img {
 
   .cookie-banner {
     right: 0.75rem;
-    bottom: 0.75rem;
-    width: calc(100vw - 1.5rem);
+    bottom: calc(1rem + env(safe-area-inset-bottom));
+    left: 0.75rem;
+    width: auto;
+    max-height: min(70dvh, calc(100dvh - 6rem));
+    overflow: auto;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: start;
     gap: 0.65rem;
-    padding: 0.8rem 2.7rem 0.8rem 0.85rem;
+    padding: 0.8rem 0.85rem;
+    overscroll-behavior: contain;
+  }
+
+  .cookie-banner .cookie-close {
+    position: static;
+    grid-column: 2;
+    grid-row: 1;
+    justify-self: end;
+    width: 2.35rem;
+    height: 2.35rem;
+    margin: -0.2rem -0.15rem 0 0.35rem;
+  }
+
+  .cookie-banner > div:first-of-type {
+    grid-column: 1;
+    grid-row: 1;
+    min-width: 0;
+  }
+
+  .cookie-banner > a,
+  .cookie-actions {
+    grid-column: 1 / -1;
   }
 
   .cookie-banner p {
@@ -1617,7 +1644,7 @@ img {
 
   .cookie-modal {
     align-items: end;
-    padding: 0.75rem;
+    padding: calc(3.5rem + env(safe-area-inset-top)) 0.75rem calc(1rem + env(safe-area-inset-bottom));
   }
 
   /* Evita che il pulsante fisso copra i link nel footer su schermi piccoli */
@@ -1628,15 +1655,11 @@ img {
   /* Assicura che la X di chiusura del modal sia visibile anche con le barre del browser sui telefoni */
   .cookie-modal-panel {
     padding-top: calc(1rem + env(safe-area-inset-top));
-    max-height: calc(100vh - calc(1rem + env(safe-area-inset-top)) - calc(1rem + env(safe-area-inset-bottom)));
+    max-height: calc(100dvh - calc(4.5rem + env(safe-area-inset-top)) - calc(1rem + env(safe-area-inset-bottom)));
   }
 
   .cookie-modal .cookie-close {
     top: calc(0.6rem + env(safe-area-inset-top));
-  }
-
-  .cookie-modal-panel {
-    max-height: calc(100vh - 1.5rem);
   }
 
   .cookie-option {

@@ -860,9 +860,10 @@ function initializeCookieControls() {
       setCookieBannerOpen(true);
     }
 
-    // If opening the modal pushed a history entry, go back to restore the URL
     try {
-      if (window.location.hash === "#cookie-settings") history.back();
+      if (window.location.hash === "#cookie-settings") {
+        history.replaceState(null, "", `${window.location.pathname}${window.location.search}`);
+      }
     } catch (e) {
       /* ignore */
     }
@@ -881,11 +882,6 @@ function initializeCookieControls() {
       event.preventDefault();
       setCookieBannerOpen(false);
       setCookieModalOpen(true);
-      try {
-        history.pushState({ cookieModal: true }, "", "#cookie-settings");
-      } catch (e) {
-        // Some browsers restrict history manipulation in certain modes — ignore
-      }
     });
   });
 
