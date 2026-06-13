@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://pirandellorooms.it/sitemap.xml
+Sitemap: https://www.pirandellorooms.it/sitemap.xml

@@ -53,7 +53,7 @@ const translations = {
     },
     about: {
       title: "Chi siamo",
-      text: "Siamo un B&B moderno e curato nel quartiere Borgo Milano, pensato per offrire un'accoglienza autentica e il calore tipico di Verona.",
+      text: "Siamo un Affittacamere moderno e curato nel quartiere Borgo Milano, pensato per offrire un'accoglienza autentica e il calore tipico di Verona.",
       feature1: {
         title: "Posizione strategica",
         text: "Via Luigi Pirandello n. 3, Verona: una base ideale per raggiungere il centro storico, i servizi e i principali punti di interesse."
@@ -108,7 +108,7 @@ const translations = {
       text: "Orari e condizioni da confermare al momento della prenotazione diretta.",
       checkin: {
         title: "Check-in",
-        text: "Dalle 15:00 alle 20:00, su appuntamento."
+        text: "Dalle 13:00 alle 23:00, su appuntamento."
       },
       checkout: {
         title: "Check-out",
@@ -125,14 +125,17 @@ const translations = {
     },
     activities: {
       eyebrow: "Esperienze locali",
-      title: "Attività a meno di 20 minuti a piedi",
+      title: "Attività a meno di 30 minuti a piedi",
       text: "Una selezione di luoghi, locali e punti di interesse facilmente raggiungibili a piedi dalla struttura.",
       canestrari: "A circa 18 minuti a piedi.",
       sanmarco: "A circa 1 minuto a piedi.",
       borgo: "A circa 5 minuti a piedi.",
       rikimauri: "A circa 10 minuti a piedi.",
       sanzeno: "A circa 15 minuti a piedi.",
-      bentegodi: "A circa 8 minuti a piedi."
+      bentegodi: "A circa 8 minuti a piedi.",
+      pontedicastelvecchio: "A circa 20 minuti a piedi.",
+      stazioneportanuova: "A circa 20 minuti a piedi.",
+      arena: "A circa 25 minuti a piedi."
     },
     footer: {
       businessName: "Pirandello Rooms di Scacchetti Matteo",
@@ -209,7 +212,7 @@ const translations = {
     },
     about: {
       title: "About us",
-      text: "We are a modern and carefully maintained B&B in the Borgo Milano district, designed to offer authentic hospitality with the warmth of Verona.",
+      text: "We are a modern and carefully maintained Guest House in the Borgo Milano district, designed to offer authentic hospitality with the warmth of Verona.",
       feature1: {
         title: "Strategic location",
         text: "Via Luigi Pirandello n. 3, Verona: an ideal base for reaching the historic centre, local services and main points of interest."
@@ -264,7 +267,7 @@ const translations = {
       text: "Times and conditions will be confirmed when booking directly.",
       checkin: {
         title: "Check-in",
-        text: "From 3:00 pm to 8:00 pm, by appointment."
+        text: "From 13:00 to 23:00, by appointment."
       },
       checkout: {
         title: "Check-out",
@@ -281,14 +284,17 @@ const translations = {
     },
     activities: {
       eyebrow: "Local experiences",
-      title: "Activities within 20 minutes on foot",
+      title: "Activities within 30 minutes on foot",
       text: "A selection of places, restaurants and points of interest that are easy to reach on foot from the property.",
       canestrari: "About 18 minutes on foot.",
       sanmarco: "About 1 minute on foot.",
       borgo: "About 5 minutes on foot.",
       rikimauri: "About 10 minutes on foot.",
       sanzeno: "About 15 minutes on foot.",
-      bentegodi: "About 8 minutes on foot."
+      bentegodi: "About 8 minutes on foot.",
+      pontedicastelvecchio: "About 20 minutes on foot.",
+      stazioneportanuova: "About 20 minutes on foot.",
+      arena: "About 25 minutes on foot."
     },
     footer: {
       businessName: "Pirandello Rooms by Scacchetti Matteo",
